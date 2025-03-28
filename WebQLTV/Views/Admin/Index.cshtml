@@ -1,0 +1,131 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+            <div>
+                <h3 class="fw-bold mb-3">Library Management Home Page</h3>
+                <h6 class="op-7 mb-2">Cập nhật các chức năng quản lý thư viện mới nhất</h6>
+            </div>
+            <div class="ms-md-auto py-2 py-md-0">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <a href="/User/UserDetails" class="text-decoration-none">
+                    <div class="card card-stats card-round shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category mb-2">Quản lý tài khoản</p>
+                                        <h4 class="card-title"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <a href="/Book/BookDetails" class="text-decoration-none">
+                    <div class="card card-stats card-round shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-info bubble-shadow-small">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category mb-2">Quản lý sách</p>
+                                        <h4 class="card-title"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <a href="/BookBorrow/BookborrowDetails" class="text-decoration-none">
+                    <div class="card card-stats card-round shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-success bubble-shadow-small">
+                                        <i class="fas fa-book-reader"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category mb-2">Quản lý mượn sách</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <a href="/Publisher/PublisherDetails" class="text-decoration-none">
+                    <div class="card card-stats card-round shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                                        <i class="fas fa-align-justify"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category mb-2">Quản lý NXB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-card {
+        transition: all 0.3s ease;
+    }
+
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+            background-color: #f8f9fa;
+        }
+
+            .hover-card:hover .icon-big {
+                transform: scale(1.1);
+            }
+
+    .icon-big {
+        transition: transform 0.3s ease;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    a.text-decoration-none {
+        color: inherit;
+    }
+
+        a.text-decoration-none:hover {
+            text-decoration: none;
+        }
+</style>

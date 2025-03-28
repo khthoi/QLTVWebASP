@@ -1,0 +1,144 @@
+﻿@model IEnumerable<WebQLTV.Models.BookType>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary">Quản lý Loại Sách</h2>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show mt-3" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Form Thêm Loại Sách -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <h5 class="card-title">Thêm Loại Sách Mới</h5>
+            <form asp-action="CreateBookType" method="post">
+                <div class="mb-3">
+                    <label for="TypeName" class="form-label fw-bold">Tên Loại Sách</label>
+                    <input type="text" name="TypeName" id="TypeName" class="form-control" required placeholder="Nhập tên loại sách..." />
+                </div>
+                <button type="submit" class="btn btn-success">Thêm Loại Sách</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bảng hiển thị loại sách -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="d-none">Mã Loại Sách</th>
+                        <th>Tên Loại Sách</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var bookType in Model)
+                    {
+                        <tr>
+                            <td class="d-none">@bookType.TypeID</td>
+                            <td>@bookType.TypeName</td>
+                            <td class="text-center align-middle">
+                                <!-- Nút sửa -->
+                                <button class="btn btn-warning me-2" onclick="showEditModal('@bookType.TypeID', '@bookType.TypeName')">
+                                    Sửa
+                                </button>
+                                <!-- Nút xóa -->
+                                <button class="btn btn-danger" onclick="showDeleteModal('@bookType.TypeID', '@bookType.TypeName')">
+                                    Xóa
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal chỉnh sửa loại sách -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Chỉnh sửa Loại Sách</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-action="EditBookType" method="post">
+                <div class="modal-body">
+                    <input type="hidden" name="TypeID" id="editTypeID" />
+                    <div class="mb-3">
+                        <label for="editTypeName" class="form-label fw-bold">Tên Loại Sách</label>
+                        <input type="text" name="TypeName" id="editTypeName" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Lưu Thay Đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal xác nhận xóa -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Xác nhận xóa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc muốn xóa loại sách <strong id="deleteTypeName"></strong> không?</p>
+                <form id="deleteForm" asp-action="DeleteBookType" method="post">
+                    <input type="hidden" name="id" id="deleteTypeID" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="submitDeleteForm()">Xóa</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>               
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+
+    <script>
+        // Hiển thị modal chỉnh sửa
+        function showEditModal(typeID, typeName) {
+            document.getElementById('editTypeID').value = typeID;
+            document.getElementById('editTypeName').value = typeName;
+            var modal = new bootstrap.Modal(document.getElementById('editModal'));
+            modal.show();
+        }
+
+        // Hiển thị modal xóa
+        function showDeleteModal(typeID, typeName) {
+            document.getElementById('deleteTypeID').value = typeID;
+            document.getElementById('deleteTypeName').textContent = typeName;
+            var modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            modal.show();
+        }
+
+        // Gửi form xóa khi xác nhận
+        function submitDeleteForm() {
+            document.getElementById('deleteForm').submit();
+        }
+        setTimeout(() => {
+            const alert = document.querySelector('.alert');
+            if (alert) {
+                alert.classList.add('fade');
+                setTimeout(() => alert.remove(), 500);  // Xóa hẳn khỏi DOM sau khi fade
+            }
+        }, 7000);  // Tự động ẩn sau 7 giây
+    </script>

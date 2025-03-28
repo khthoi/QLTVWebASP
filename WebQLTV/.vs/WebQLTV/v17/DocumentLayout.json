@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Visual Studio Project\\WebQLTV\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\webqltv\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\webqltv\\views\\userlogin\\customer\\userinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:views\\userlogin\\customer\\userinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\webqltv\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\webqltv\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\webqltv\\controllers\\bookborrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\bookborrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Visual Studio Project\\WebQLTV\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Visual Studio Project\\WebQLTV\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAwwCcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T13:24:07.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Project\\WebQLTV\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Visual Studio Project\\WebQLTV\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAYwKcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-28T13:01:10.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserInfo.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Project\\WebQLTV\\Views\\UserLogin\\Customer\\UserInfo.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserLogin\\Customer\\UserInfo.cshtml",
+              "ToolTip": "D:\\Visual Studio Project\\WebQLTV\\Views\\UserLogin\\Customer\\UserInfo.cshtml",
+              "RelativeToolTip": "Views\\UserLogin\\Customer\\UserInfo.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC8AAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-28T04:14:32.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookBorrowController.cs",
+              "DocumentMoniker": "D:\\Visual Studio Project\\WebQLTV\\Controllers\\BookBorrowController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookBorrowController.cs",
+              "ToolTip": "D:\\Visual Studio Project\\WebQLTV\\Controllers\\BookBorrowController.cs",
+              "RelativeToolTip": "Controllers\\BookBorrowController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T15:38:27.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Visual Studio Project\\WebQLTV\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Visual Studio Project\\WebQLTV\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAwJoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T15:16:44.319Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

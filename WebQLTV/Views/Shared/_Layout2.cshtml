@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quản Lý Thư Viện</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="/assetadminlayout/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts and icons -->
+    <script src="/assetadminlayout/assets/js/plugin/webfont/webfont.min.js"></script>
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" integrity="sha512-QKC1UZ/ZHNgFzVKSAhV5v5j73eeL9EEN289eKAEFaAjgAiobVAnVv/AGuPbXsKl1gPwBcbhjIuL0ElCmmrQ+3Ig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/assetadminlayout/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assetadminlayout/assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="/assetadminlayout/assets/css/kaiadmin.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar" data-background-color="dark">
+            <div class="sidebar-logo">
+                <!-- Logo Header -->
+                <div class="logo-header" data-background-color="dark">
+                    <a href="/Admin/Index" class="logo">
+                        <img src="/assetadminlayout/assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" />
+                    </a>
+                    <div class="nav-toggle">
+                        <button class="btn btn-toggle toggle-sidebar">
+                            <i class="gg-menu-right"></i>
+                        </button>
+                        <button class="btn btn-toggle sidenav-toggler">
+                            <i class="gg-menu-left"></i>
+                        </button>
+                    </div>
+                    <button class="topbar-toggler more">
+                        <i class="gg-more-vertical-alt"></i>
+                    </button>
+                </div>
+                <!-- End Logo Header -->
+            </div>
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content">
+                    <ul class="nav nav-secondary">
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </span>
+                            <h3 class="text-section">Admin Dashboard</h3>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Home/Index">
+                                <i class="fas fa-arrow-left"></i>
+                                <p>Về lại Trang Chủ</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Admin/Index">
+                                <i class="fas fa-home"></i>
+                                <p>Home Panel</p>
+                            </a>
+                        </li>
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </span>
+                            <h3 class="text-section">Components</h3>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/BookBorrow/BookborrowDetails">
+                                <i class="fas fa-address-book"></i>
+                                <p>Quản lý Mượn sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Book/BookDetails">
+                                <i class="fas fa-book"></i>
+                                <p>Quản lý sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/BookType/BookTypeDetails">
+                                <i class="fas fa-book-open"></i>
+                                <p>Quản lý thể loại sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Author/AuthorDetails">
+                                <i class="fas fa-bookmark"></i>
+                                <p>Quản lý tác giả</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Publisher/PublisherDetails">
+                                <i class="fas fa-file-archive"></i>
+                                <p>Quản lý NXB</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/User/UserDetails">
+                                <i class="fas fa-user-friends"></i>
+                                <p>Quản lý Tài Khoản</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="main-panel">
+            <div class="main-header">
+                <div class="main-header-logo">
+                    <!-- Logo Header -->
+                    <div class="logo-header" data-background-color="dark">
+                        <a href="/Admin/Index" class="logo">
+                            <img src="/assetadminlayout/assets/img/logo_light.png" alt="navbar brand" class="navbar-brand" height="20" />
+                        </a>
+                        <div class="nav-toggle">
+                            <button class="btn btn-toggle toggle-sidebar">
+                                <i class="gg-menu-right"></i>
+                            </button>
+                            <button class="btn btn-toggle sidenav-toggler">
+                                <i class="gg-menu-left"></i>
+                            </button>
+                        </div>
+                        <button class="topbar-toggler more">
+                            <i class="gg-more-vertical-alt"></i>
+                        </button>
+                    </div>
+                    <!-- End Logo Header -->
+                </div>    
+                <!-- Navbar Header -->
+                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                </div>
+                            </div>
+                        </nav>
+
+                        <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                            <li class="nav-item topbar-user dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img src="/assetadminlayout/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                                    </div>
+                                    <span class="profile-username">
+                                        <span class="op-7">Hi,</span>
+                                        @using System.Security.Claims
+                                        @* Kiểm tra trạng thái đăng nhập bằng Cookie Authentication *@
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+											var username = User.Identity.Name;
+                                            <span class="fw-bold">@username</span>
+                                        }
+                                        
+                                    </span>
+                                </a>
+                                <!-- Thêm dropdown menu -->
+                                <ul class="dropdown-menu dropdown-menu-end animated fadeIn">
+                                    <li>
+                                        <a class="dropdown-item text-danger" href="/Account/Logout">
+                                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+            </div>
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+      </div>
+    <!-- Core JS Files -->
+    <script src="/assetadminlayout/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="/assetadminlayout/assets/js/core/popper.min.js"></script>
+    <script src="/assetadminlayout/assets/js/core/bootstrap.min.js"></script>
+
+    <!-- Plugins JS -->
+    <script src="/assetadminlayout/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/jsvectormap/world.js"></script>
+    <script src="/assetadminlayout/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="/assetadminlayout/assets/js/kaiadmin.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Lấy URL hiện tại
+            var currentUrl = window.location.pathname;
+
+            // Duyệt qua tất cả các link trong sidebar
+            $('.nav-item a').each(function() {
+                var linkUrl = $(this).attr('href');
+
+                // So sánh URL hiện tại với href của link
+                if (currentUrl === linkUrl) {
+                    // Xóa class active khỏi tất cả các nav-item
+                    $('.nav-item').removeClass('active bg-dark border-start border-white border-3');
+
+                    // Thêm các class Bootstrap cho nav-item cha
+                    $(this).closest('.nav-item').addClass('active bg-dark border-start border-white border-3');
+
+                    // Nếu là mục con trong collapse, mở collapse và đánh dấu active cho cả parent
+                    if ($(this).parent().hasClass('nav-collapse')) {
+                        $(this).closest('.collapse').addClass('show');
+                        $(this).closest('.nav-item').find('> a').attr('aria-expanded', 'true');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

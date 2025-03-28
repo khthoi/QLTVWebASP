@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebQLTV.Models.Author>
+
+@{
+    ViewData["Title"] = "Danh sách tác giả";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-center">Danh Sách Tác Giả</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            @if (Model != null && Model.Any())
+            {
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="text-center" style="width: 10%;">STT</th>
+                            <th scope="col" class="text-center">Tên Tác Giả</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var author in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@author.AuthorID</td>
+                                <td>
+                                    <a href="#"
+                                       class="text-dark fw-bold text-decoration-none"
+                                       data-bs-toggle="tooltip"
+                                       data-bs-html="true"
+                                       data-bs-placement="top"
+                                       title="@Html.Raw($"<b>Tên:</b> {author.AuthorName}<br>" +
+                                                       (author.Books != null && author.Books.Any()
+                                                       ? $"<b>Sách:</b> <ul>{string.Join("", author.Books.Select(b => $"<li>{b.Title}</li>"))}</ul>"
+                                                       : "<b>Sách:</b> Chưa có sách nào"))">
+                                        @author.AuthorName
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="text-center">
+                    <p class="text-muted">Hiện tại không có tác giả nào trong danh sách.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .table {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ cho bảng */
+    }
+
+        .table th, .table td {
+            vertical-align: middle; /* Căn giữa nội dung theo chiều dọc */
+        }
+
+    .tooltip-inner {
+        text-align: left !important;
+        max-width: 300px !important; /* Tăng chiều rộng tooltip */
+        width: 300px;
+    }
+
+    .tooltip ul {
+        padding-left: 20px; /* Thụt dòng cho danh sách */
+        margin-bottom: 0; /* Loại bỏ margin dưới */
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, {
+                boundary: 'window',
+                trigger: 'hover'  // Tooltip kích hoạt khi hover
+            });
+        });
+    });
+</script>

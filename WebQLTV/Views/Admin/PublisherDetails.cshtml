@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebQLTV.Models.BookPublisher>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<h2 class="mt-4" style="margin-left:20px">Danh Sách Nhà Xuất Bản</h2>
+<div class="container mt-5">
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show mt-3" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">
+        Thêm Nhà Xuất Bản
+    </button>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th class="d-none">Mã Nhà Xuất Bản</th>
+                <th>Tên Nhà Xuất Bản</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var publisher in Model)
+            {
+                <tr>
+                    <td class="d-none">@publisher.PublisherID</td>
+                    <td>@publisher.PublisherName</td>
+                    <td class="text-center align-middle">
+                        <button class="btn btn-warning" onclick="openEditModal(@publisher.PublisherID, '@publisher.PublisherName')">
+                            Sửa
+                        </button>
+                        <button class="btn btn-danger" onclick="openDeleteModal(@publisher.PublisherID, '@publisher.PublisherName')">
+                            Xóa
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal Thêm Nhà Xuất Bản -->
+    <div class="modal fade" id="createModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="CreatePublisher" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thêm Nhà Xuất Bản</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="PublisherName">Tên Nhà Xuất Bản</label>
+                            <input type="text" name="PublisherName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sửa Nhà Xuất Bản -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="EditPublisher" method="post">
+                    <input type="hidden" id="editPublisherID" name="PublisherID" />
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sửa Nhà Xuất Bản</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="editPublisherName">Tên Nhà Xuất Bản</label>
+                            <input type="text" id="editPublisherName" name="PublisherName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning">Lưu Thay Đổi</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Xóa Nhà Xuất Bản -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="DeletePublisher" method="post">
+                    <input type="hidden" id="deletePublisherID" name="PublisherID" />
+                    <div class="modal-header">
+                        <h5 class="modal-title">Xóa Nhà Xuất Bản</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bạn có chắc chắn muốn xóa nhà xuất bản <span id="deletePublisherName" class="fw-bold"></span>?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">Xóa</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openEditModal(id, name) {
+        document.getElementById("editPublisherID").value = id;
+        document.getElementById("editPublisherName").value = name;
+
+        var editModal = new bootstrap.Modal(document.getElementById("editModal"));
+        editModal.show();
+    }
+
+    function openDeleteModal(id, name) {
+        document.getElementById("deletePublisherID").value = id;
+        document.getElementById("deletePublisherName").innerText = name;
+
+        var deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+        deleteModal.show();
+    }
+</script>

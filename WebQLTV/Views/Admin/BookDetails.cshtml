@@ -1,0 +1,294 @@
+﻿@model IEnumerable<WebQLTV.Models.Book>
+
+@{
+	Layout = "~/Views/Shared/_Layout2.cshtml"; 
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show mt-3" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<h2 class="mt-4" style="margin-left:20px">QUẢN LÝ SÁCH</h2>
+<div class="mt-4" style="margin: 0px 8px 0px 8px;">
+    <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addBookModal">Thêm Sách</a>
+    <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#uploadImageModal" style="margin-left:8px">Thêm ảnh bìa sách</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th style="width: 7%;">BookID</th>
+                <th style="width: 26%;">Tiêu đề</th>
+                <th style="width: auto;">Loại sách</th>
+                <th style="width: auto;">Tác giả</th>
+                <th style="width: auto;">Nhà xuất bản</th>
+                <th style="width: 9%;">Số lượng</th>
+                <th style="width: 13%;">Tổng số lần mượn</th>
+                <th style="width: 13%;">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.BookID</td>
+                    <td>@book.Title</td>
+                    <td>@book.Type?.TypeName</td>
+                    <td>@book.Author?.AuthorName</td>
+                    <td>@book.Publisher?.PublisherName</td>
+                    <td>@book.Quantity</td>
+                    <td>@book.TotalBorrow</td>
+                    <td class="text-center align-middle">
+                        <button onclick="openEditModal(@book.BookID, '@book.Title', @book.Quantity, @book.TypeID, @book.AuthorID, @book.PublisherID, '@book.Description', '@book.ImgPath')" class="btn btn-warning me-2">
+                            Sửa
+                        </button>
+                        <button class="btn btn-danger"
+                                onclick="openDeleteModal('@book.BookID', '@book.Title')">
+                            Xóa
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<!-- Modal Thêm Sách -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="CreateBook" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBookModalLabel">Thêm Sách</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Tiêu đề</label>
+                        <input type="text" class="form-control" name="Title" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Loại sách</label>
+                        <select class="form-control" name="TypeID">
+                            <option value="">-- Chọn loại sách --</option>
+                            @foreach (var type in (List<WebQLTV.Models.BookType>)ViewData["Types"])
+                            {
+                                <option value="@type.TypeID">@type.TypeName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Tác giả</label>
+                        <select class="form-control" name="AuthorID">
+                            <option value="">-- Chọn Tác giả --</option>
+                            @foreach (var author in (List<WebQLTV.Models.Author>)ViewData["Authors"])
+                            {
+                                <option value="@author.AuthorID">
+                                    @author.AuthorName
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Nhà xuất bản</label>
+                        <select class="form-control" name="PublisherID">
+                            <option value="">-- Chọn Nhà xuất bản --</option>
+                            @foreach (var publisher in (List<WebQLTV.Models.BookPublisher>)ViewData["Publishers"])
+                            {
+                                <option value="@publisher.PublisherID">@publisher.PublisherName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Số lượng</label>
+                        <input type="number" class="form-control" name="Quantity" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Mô tả</label>
+                        <textarea class="form-control" name="Description"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Chọn ảnh bìa</label>
+                        <select id="imageSelect" class="form-control">
+                            <option value="">Chọn ảnh</option>
+                            @foreach (var fileName in (List<string>)ViewData["ImageFiles"])
+                            {
+                                <option value="@fileName">@fileName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="imgPath" name="ImgPath" />
+                    <input type="hidden" name="Total_Borrow" value="0" />
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Thêm Sách</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Sửa Sách -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="EditBook" method="post">
+                <input type="hidden" id="editBookID" name="BookID" />
+                <div class="modal-header">
+                    <h5 class="modal-title">Sửa Thông Tin Sách</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Tiêu đề</label>
+                        <input type="text" id="editTitle" name="Title" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Số lượng</label>
+                        <input type="number" id="editQuantity" name="Quantity" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Loại sách</label>
+                        <select id="editType" name="TypeID" class="form-control">
+                            @foreach (var type in (List<WebQLTV.Models.BookType>)ViewData["Types"])
+                            {
+                                <option value="@type.TypeID">@type.TypeName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Tác giả</label>
+                        <select id="editAuthor" name="AuthorID" class="form-control">
+                            @foreach (var author in (List<WebQLTV.Models.Author>)ViewData["Authors"])
+                            {
+                                <option value="@author.AuthorID">@author.AuthorName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Nhà xuất bản</label>
+                        <select id="editPublisher" name="PublisherID" class="form-control">
+                            @foreach (var publisher in (List<WebQLTV.Models.BookPublisher>)ViewData["Publishers"])
+                            {
+                                <option value="@publisher.PublisherID">@publisher.PublisherName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Mô tả</label>
+                        <textarea id="editDescription" name="Description" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Đường dẫn ảnh</label>
+                        <select id="editImgPath" name="ImgPath" class="form-control">
+                            <option value="">-- Chọn ảnh bìa sách --</option>
+                            @foreach (var image in (List<string>)ViewData["ImageFiles"])
+                            {
+                                <option value="lib/img/imgbook/@image">@image</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">Lưu thay đổi</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Xóa Sách -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="DeleteBook" method="post">
+                <input type="hidden" id="deleteBookID" name="id" />
+                <div class="modal-header">
+                    <h5 class="modal-title">Xóa Sách</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc muốn xóa sách: <span id="deleteBookTitle" class="fw-bold"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Xóa</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Upload Image -->
+<div class="modal fade" id="uploadImageModal" tabindex="-1" aria-labelledby="uploadImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadImageModalLabel">Upload Ảnh Bìa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="imageFile">Chọn ảnh:</label>
+                        <input type="file" id="imageFile" name="imageFile" class="form-control" accept="image/*" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Upload</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openEditModal(id, title, quantity, typeId, authorId, publisherId, description, imgPath) {
+        document.getElementById("editBookID").value = id;
+        document.getElementById("editTitle").value = title;
+        document.getElementById("editQuantity").value = quantity;
+        document.getElementById("editType").value = typeId;
+        document.getElementById("editAuthor").value = authorId;
+        document.getElementById("editPublisher").value = publisherId;
+        document.getElementById("editDescription").value = description;
+        document.getElementById("editImgPath").value = imgPath;
+
+        var editModal = new bootstrap.Modal(document.getElementById("editModal"));
+        editModal.show();
+    }
+
+    function openDeleteModal(id, title) {
+        document.getElementById("deleteBookID").value = id;
+        document.getElementById("deleteBookTitle").innerText = title;
+
+        var deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+        deleteModal.show();
+    }
+    
+    
+    document.getElementById("imageSelect").addEventListener("change", function () {
+        var selectedFile = this.value;
+        var imgPath = "lib/img/imgbook/" + selectedFile;
+        document.getElementById("imgPath").value = imgPath;  // Gắn vào input hidden ImgPath
+    });
+
+    setTimeout(() => {
+        const alert = document.querySelector('.alert');
+        if (alert) {
+            alert.classList.add('fade');
+            setTimeout(() => alert.remove(), 500);  // Xóa hẳn khỏi DOM sau khi fade
+        }
+    }, 7000);  // Tự động ẩn sau 7 giây
+</script>

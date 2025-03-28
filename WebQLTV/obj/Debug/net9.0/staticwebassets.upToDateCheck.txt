@@ -1,0 +1,686 @@
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.bundle.js
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.bundle.js.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.esm.js
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.esm.js.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.esm.min.js
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.esm.min.js.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.js
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.js.map
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.min.js
+C:\Users\Admin\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\js\bootstrap.min.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_Hello_qnas.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\demo.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\kaiadmin.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\examples\logo2.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_tabs_jf82.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\webfont\webfont.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\core\bootstrap.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\js\main.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\kaiadmin\logo_dark.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\sticky-sidebar\sticky-sidebar.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\jquery-scrollbar\jquery.scrollbar.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_page_not_found_su7k.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-regular-400.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\jsvectormap\jsvectormap.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\css\main.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\logoproduct3.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation\dist\additional-methods.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+D:\Visual Studio Project\WebQLTV\wwwroot\favicon.ico
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\demo.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\jquery.magnific-popup\jquery.magnific-popup.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\fonts\simple-line-icons\Simple-Line-Icons.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\dist\jquery.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\kaiadmin\icon.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\visa.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\fullcalendar\fullcalendar.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_blank_canvas_3rbb.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\kaiadmin\favicon.ico
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\sweetalert\sweetalert.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\js\newFile.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\kaiadmin.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\demo.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\kaiadmin\logo_light.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_not_found_60pq.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\setting-demo2.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\core\popper.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\plugins.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\select2\select2.full.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-solid-900.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\bootstrap-tagsinput\bootstrap-tagsinput.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_update_uxn2.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_no_data_qbuo.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+D:\Visual Studio Project\WebQLTV\wwwroot\css\site.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_empty_xct9.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\dist\jquery.slim.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\dist\jquery.slim.min.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\jsvectormap\world.js
+D:\Visual Studio Project\WebQLTV\wwwroot\js\site.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\list.js\list.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\dropzone\dropzone.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\favicon.ico
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\fonts.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\moment\moment.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\examples\logoinvoice.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\LICENSE.txt
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\plugins.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation\LICENSE.md
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_Taken_if77.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_sign_in_e6hj.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\core\jquery-3.7.1.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\plugins.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\kaiadmin.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_upgrade_06a0.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\bootstrap.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\sortable\sortable.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\logoproduct.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\logoproduct2.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\kaiadmin.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-brands-400.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\flags\readme.txt
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\summernote\summernote-lite.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\jquery.sparkline\jquery.sparkline.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\dist\jquery.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\bootstrap-toggle\bootstrap-toggle.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\setting-demo.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\gmaps\gmaps.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\kaiadmin.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\examples\logo.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\kaiadmin\favicon.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\dist\jquery.slim.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\chart.js\chart.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\undraw\undraw_creative_team_r90h.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\datatables\datatables.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery\dist\jquery.min.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\owl-carousel\owl.carousel.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\chart-circle\circles.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\datepicker\bootstrap-datetimepicker.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\css\fonts.min.css
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\js\plugin\jquery.validate\jquery.validate.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+D:\Visual Studio Project\WebQLTV\wwwroot\assetadminlayout\assets\img\examples\logo1.svg
+D:\Visual Studio Project\WebQLTV\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\assetadminlayout\assets\css\bootstrap.min.css
+wwwroot\assetadminlayout\assets\css\demo.css
+wwwroot\assetadminlayout\assets\css\demo.css.map
+wwwroot\assetadminlayout\assets\css\fonts.css
+wwwroot\assetadminlayout\assets\css\fonts.min.css
+wwwroot\assetadminlayout\assets\css\kaiadmin.css
+wwwroot\assetadminlayout\assets\css\kaiadmin.css.map
+wwwroot\assetadminlayout\assets\css\kaiadmin.min.css
+wwwroot\assetadminlayout\assets\css\plugins.css
+wwwroot\assetadminlayout\assets\css\plugins.css.map
+wwwroot\assetadminlayout\assets\css\plugins.min.css
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-brands-400.eot
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-brands-400.svg
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-brands-400.ttf
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-brands-400.woff
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-brands-400.woff2
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-regular-400.eot
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-regular-400.svg
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-regular-400.ttf
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-regular-400.woff
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-regular-400.woff2
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-solid-900.eot
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-solid-900.svg
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-solid-900.ttf
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-solid-900.woff
+wwwroot\assetadminlayout\assets\fonts\fontawesome\fa-solid-900.woff2
+wwwroot\assetadminlayout\assets\fonts\simple-line-icons\Simple-Line-Icons.eot
+wwwroot\assetadminlayout\assets\fonts\simple-line-icons\Simple-Line-Icons.svg
+wwwroot\assetadminlayout\assets\fonts\simple-line-icons\Simple-Line-Icons.ttf
+wwwroot\assetadminlayout\assets\fonts\simple-line-icons\Simple-Line-Icons.woff
+wwwroot\assetadminlayout\assets\fonts\simple-line-icons\Simple-Line-Icons.woff2
+wwwroot\assetadminlayout\assets\fonts\summernote\summernote.eot
+wwwroot\assetadminlayout\assets\fonts\summernote\summernote.ttf
+wwwroot\assetadminlayout\assets\fonts\summernote\summernote.woff
+wwwroot\assetadminlayout\assets\fonts\summernote\summernote.woff2
+wwwroot\assetadminlayout\assets\img\arashmil.jpg
+wwwroot\assetadminlayout\assets\img\bg-404.jpeg
+wwwroot\assetadminlayout\assets\img\blogpost.jpg
+wwwroot\assetadminlayout\assets\img\chadengle.jpg
+wwwroot\assetadminlayout\assets\img\examples\example1.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example10.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example10-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example11.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example11-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example12.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example12-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example1-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example2.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example2-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example3.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example3-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example4.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example4-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example5.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example5-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example6.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example6-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example7.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example7-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example8.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example8-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\example9.jpeg
+wwwroot\assetadminlayout\assets\img\examples\example9-300x300.jpg
+wwwroot\assetadminlayout\assets\img\examples\logo.svg
+wwwroot\assetadminlayout\assets\img\examples\logo1.svg
+wwwroot\assetadminlayout\assets\img\examples\logo2.svg
+wwwroot\assetadminlayout\assets\img\examples\logoinvoice.svg
+wwwroot\assetadminlayout\assets\img\examples\product1.jpg
+wwwroot\assetadminlayout\assets\img\examples\product10.jpeg
+wwwroot\assetadminlayout\assets\img\examples\product11.jpeg
+wwwroot\assetadminlayout\assets\img\examples\product12.jpeg
+wwwroot\assetadminlayout\assets\img\examples\product2.jpg
+wwwroot\assetadminlayout\assets\img\examples\product3.jpg
+wwwroot\assetadminlayout\assets\img\examples\product4.jpg
+wwwroot\assetadminlayout\assets\img\examples\product5.jpg
+wwwroot\assetadminlayout\assets\img\examples\product6.jpg
+wwwroot\assetadminlayout\assets\img\examples\product7.jpg
+wwwroot\assetadminlayout\assets\img\examples\product8.jpg
+wwwroot\assetadminlayout\assets\img\flags\ad.png
+wwwroot\assetadminlayout\assets\img\flags\ae.png
+wwwroot\assetadminlayout\assets\img\flags\af.png
+wwwroot\assetadminlayout\assets\img\flags\ag.png
+wwwroot\assetadminlayout\assets\img\flags\ai.png
+wwwroot\assetadminlayout\assets\img\flags\al.png
+wwwroot\assetadminlayout\assets\img\flags\am.png
+wwwroot\assetadminlayout\assets\img\flags\an.png
+wwwroot\assetadminlayout\assets\img\flags\ao.png
+wwwroot\assetadminlayout\assets\img\flags\ar.png
+wwwroot\assetadminlayout\assets\img\flags\as.png
+wwwroot\assetadminlayout\assets\img\flags\at.png
+wwwroot\assetadminlayout\assets\img\flags\au.png
+wwwroot\assetadminlayout\assets\img\flags\aw.png
+wwwroot\assetadminlayout\assets\img\flags\ax.png
+wwwroot\assetadminlayout\assets\img\flags\az.png
+wwwroot\assetadminlayout\assets\img\flags\ba.png
+wwwroot\assetadminlayout\assets\img\flags\bb.png
+wwwroot\assetadminlayout\assets\img\flags\bd.png
+wwwroot\assetadminlayout\assets\img\flags\be.png
+wwwroot\assetadminlayout\assets\img\flags\bf.png
+wwwroot\assetadminlayout\assets\img\flags\bg.png
+wwwroot\assetadminlayout\assets\img\flags\bh.png
+wwwroot\assetadminlayout\assets\img\flags\bi.png
+wwwroot\assetadminlayout\assets\img\flags\bj.png
+wwwroot\assetadminlayout\assets\img\flags\bm.png
+wwwroot\assetadminlayout\assets\img\flags\bn.png
+wwwroot\assetadminlayout\assets\img\flags\bo.png
+wwwroot\assetadminlayout\assets\img\flags\br.png
+wwwroot\assetadminlayout\assets\img\flags\bs.png
+wwwroot\assetadminlayout\assets\img\flags\bt.png
+wwwroot\assetadminlayout\assets\img\flags\bv.png
+wwwroot\assetadminlayout\assets\img\flags\bw.png
+wwwroot\assetadminlayout\assets\img\flags\by.png
+wwwroot\assetadminlayout\assets\img\flags\bz.png
+wwwroot\assetadminlayout\assets\img\flags\ca.png
+wwwroot\assetadminlayout\assets\img\flags\catalonia.png
+wwwroot\assetadminlayout\assets\img\flags\cc.png
+wwwroot\assetadminlayout\assets\img\flags\cd.png
+wwwroot\assetadminlayout\assets\img\flags\cf.png
+wwwroot\assetadminlayout\assets\img\flags\cg.png
+wwwroot\assetadminlayout\assets\img\flags\ch.png
+wwwroot\assetadminlayout\assets\img\flags\ci.png
+wwwroot\assetadminlayout\assets\img\flags\ck.png
+wwwroot\assetadminlayout\assets\img\flags\cl.png
+wwwroot\assetadminlayout\assets\img\flags\cm.png
+wwwroot\assetadminlayout\assets\img\flags\cn.png
+wwwroot\assetadminlayout\assets\img\flags\co.png
+wwwroot\assetadminlayout\assets\img\flags\cr.png
+wwwroot\assetadminlayout\assets\img\flags\cs.png
+wwwroot\assetadminlayout\assets\img\flags\cu.png
+wwwroot\assetadminlayout\assets\img\flags\cv.png
+wwwroot\assetadminlayout\assets\img\flags\cx.png
+wwwroot\assetadminlayout\assets\img\flags\cy.png
+wwwroot\assetadminlayout\assets\img\flags\cz.png
+wwwroot\assetadminlayout\assets\img\flags\de.png
+wwwroot\assetadminlayout\assets\img\flags\dj.png
+wwwroot\assetadminlayout\assets\img\flags\dk.png
+wwwroot\assetadminlayout\assets\img\flags\dm.png
+wwwroot\assetadminlayout\assets\img\flags\do.png
+wwwroot\assetadminlayout\assets\img\flags\dz.png
+wwwroot\assetadminlayout\assets\img\flags\ec.png
+wwwroot\assetadminlayout\assets\img\flags\ee.png
+wwwroot\assetadminlayout\assets\img\flags\eg.png
+wwwroot\assetadminlayout\assets\img\flags\eh.png
+wwwroot\assetadminlayout\assets\img\flags\england.png
+wwwroot\assetadminlayout\assets\img\flags\er.png
+wwwroot\assetadminlayout\assets\img\flags\es.png
+wwwroot\assetadminlayout\assets\img\flags\et.png
+wwwroot\assetadminlayout\assets\img\flags\europeanunion.png
+wwwroot\assetadminlayout\assets\img\flags\fam.png
+wwwroot\assetadminlayout\assets\img\flags\fi.png
+wwwroot\assetadminlayout\assets\img\flags\fj.png
+wwwroot\assetadminlayout\assets\img\flags\fk.png
+wwwroot\assetadminlayout\assets\img\flags\fm.png
+wwwroot\assetadminlayout\assets\img\flags\fo.png
+wwwroot\assetadminlayout\assets\img\flags\fr.png
+wwwroot\assetadminlayout\assets\img\flags\ga.png
+wwwroot\assetadminlayout\assets\img\flags\gb.png
+wwwroot\assetadminlayout\assets\img\flags\gd.png
+wwwroot\assetadminlayout\assets\img\flags\ge.png
+wwwroot\assetadminlayout\assets\img\flags\gf.png
+wwwroot\assetadminlayout\assets\img\flags\gh.png
+wwwroot\assetadminlayout\assets\img\flags\gi.png
+wwwroot\assetadminlayout\assets\img\flags\gl.png
+wwwroot\assetadminlayout\assets\img\flags\gm.png
+wwwroot\assetadminlayout\assets\img\flags\gn.png
+wwwroot\assetadminlayout\assets\img\flags\gp.png
+wwwroot\assetadminlayout\assets\img\flags\gq.png
+wwwroot\assetadminlayout\assets\img\flags\gr.png
+wwwroot\assetadminlayout\assets\img\flags\gs.png
+wwwroot\assetadminlayout\assets\img\flags\gt.png
+wwwroot\assetadminlayout\assets\img\flags\gu.png
+wwwroot\assetadminlayout\assets\img\flags\gw.png
+wwwroot\assetadminlayout\assets\img\flags\gy.png
+wwwroot\assetadminlayout\assets\img\flags\hk.png
+wwwroot\assetadminlayout\assets\img\flags\hm.png
+wwwroot\assetadminlayout\assets\img\flags\hn.png
+wwwroot\assetadminlayout\assets\img\flags\hr.png
+wwwroot\assetadminlayout\assets\img\flags\ht.png
+wwwroot\assetadminlayout\assets\img\flags\hu.png
+wwwroot\assetadminlayout\assets\img\flags\id.png
+wwwroot\assetadminlayout\assets\img\flags\ie.png
+wwwroot\assetadminlayout\assets\img\flags\il.png
+wwwroot\assetadminlayout\assets\img\flags\in.png
+wwwroot\assetadminlayout\assets\img\flags\io.png
+wwwroot\assetadminlayout\assets\img\flags\iq.png
+wwwroot\assetadminlayout\assets\img\flags\ir.png
+wwwroot\assetadminlayout\assets\img\flags\is.png
+wwwroot\assetadminlayout\assets\img\flags\it.png
+wwwroot\assetadminlayout\assets\img\flags\jm.png
+wwwroot\assetadminlayout\assets\img\flags\jo.png
+wwwroot\assetadminlayout\assets\img\flags\jp.png
+wwwroot\assetadminlayout\assets\img\flags\ke.png
+wwwroot\assetadminlayout\assets\img\flags\kg.png
+wwwroot\assetadminlayout\assets\img\flags\kh.png
+wwwroot\assetadminlayout\assets\img\flags\ki.png
+wwwroot\assetadminlayout\assets\img\flags\km.png
+wwwroot\assetadminlayout\assets\img\flags\kn.png
+wwwroot\assetadminlayout\assets\img\flags\kp.png
+wwwroot\assetadminlayout\assets\img\flags\kr.png
+wwwroot\assetadminlayout\assets\img\flags\kw.png
+wwwroot\assetadminlayout\assets\img\flags\ky.png
+wwwroot\assetadminlayout\assets\img\flags\kz.png
+wwwroot\assetadminlayout\assets\img\flags\la.png
+wwwroot\assetadminlayout\assets\img\flags\lb.png
+wwwroot\assetadminlayout\assets\img\flags\lc.png
+wwwroot\assetadminlayout\assets\img\flags\li.png
+wwwroot\assetadminlayout\assets\img\flags\lk.png
+wwwroot\assetadminlayout\assets\img\flags\lr.png
+wwwroot\assetadminlayout\assets\img\flags\ls.png
+wwwroot\assetadminlayout\assets\img\flags\lt.png
+wwwroot\assetadminlayout\assets\img\flags\lu.png
+wwwroot\assetadminlayout\assets\img\flags\lv.png
+wwwroot\assetadminlayout\assets\img\flags\ly.png
+wwwroot\assetadminlayout\assets\img\flags\ma.png
+wwwroot\assetadminlayout\assets\img\flags\mc.png
+wwwroot\assetadminlayout\assets\img\flags\md.png
+wwwroot\assetadminlayout\assets\img\flags\me.png
+wwwroot\assetadminlayout\assets\img\flags\mg.png
+wwwroot\assetadminlayout\assets\img\flags\mh.png
+wwwroot\assetadminlayout\assets\img\flags\mk.png
+wwwroot\assetadminlayout\assets\img\flags\ml.png
+wwwroot\assetadminlayout\assets\img\flags\mm.png
+wwwroot\assetadminlayout\assets\img\flags\mn.png
+wwwroot\assetadminlayout\assets\img\flags\mo.png
+wwwroot\assetadminlayout\assets\img\flags\mp.png
+wwwroot\assetadminlayout\assets\img\flags\mq.png
+wwwroot\assetadminlayout\assets\img\flags\mr.png
+wwwroot\assetadminlayout\assets\img\flags\ms.png
+wwwroot\assetadminlayout\assets\img\flags\mt.png
+wwwroot\assetadminlayout\assets\img\flags\mu.png
+wwwroot\assetadminlayout\assets\img\flags\mv.png
+wwwroot\assetadminlayout\assets\img\flags\mw.png
+wwwroot\assetadminlayout\assets\img\flags\mx.png
+wwwroot\assetadminlayout\assets\img\flags\my.png
+wwwroot\assetadminlayout\assets\img\flags\mz.png
+wwwroot\assetadminlayout\assets\img\flags\na.png
+wwwroot\assetadminlayout\assets\img\flags\nc.png
+wwwroot\assetadminlayout\assets\img\flags\ne.png
+wwwroot\assetadminlayout\assets\img\flags\nf.png
+wwwroot\assetadminlayout\assets\img\flags\ng.png
+wwwroot\assetadminlayout\assets\img\flags\ni.png
+wwwroot\assetadminlayout\assets\img\flags\nl.png
+wwwroot\assetadminlayout\assets\img\flags\no.png
+wwwroot\assetadminlayout\assets\img\flags\np.png
+wwwroot\assetadminlayout\assets\img\flags\nr.png
+wwwroot\assetadminlayout\assets\img\flags\nu.png
+wwwroot\assetadminlayout\assets\img\flags\nz.png
+wwwroot\assetadminlayout\assets\img\flags\om.png
+wwwroot\assetadminlayout\assets\img\flags\pa.png
+wwwroot\assetadminlayout\assets\img\flags\pe.png
+wwwroot\assetadminlayout\assets\img\flags\pf.png
+wwwroot\assetadminlayout\assets\img\flags\pg.png
+wwwroot\assetadminlayout\assets\img\flags\ph.png
+wwwroot\assetadminlayout\assets\img\flags\pk.png
+wwwroot\assetadminlayout\assets\img\flags\pl.png
+wwwroot\assetadminlayout\assets\img\flags\pm.png
+wwwroot\assetadminlayout\assets\img\flags\pn.png
+wwwroot\assetadminlayout\assets\img\flags\pr.png
+wwwroot\assetadminlayout\assets\img\flags\ps.png
+wwwroot\assetadminlayout\assets\img\flags\pt.png
+wwwroot\assetadminlayout\assets\img\flags\pw.png
+wwwroot\assetadminlayout\assets\img\flags\py.png
+wwwroot\assetadminlayout\assets\img\flags\qa.png
+wwwroot\assetadminlayout\assets\img\flags\re.png
+wwwroot\assetadminlayout\assets\img\flags\readme.txt
+wwwroot\assetadminlayout\assets\img\flags\ro.png
+wwwroot\assetadminlayout\assets\img\flags\rs.png
+wwwroot\assetadminlayout\assets\img\flags\ru.png
+wwwroot\assetadminlayout\assets\img\flags\rw.png
+wwwroot\assetadminlayout\assets\img\flags\sa.png
+wwwroot\assetadminlayout\assets\img\flags\sb.png
+wwwroot\assetadminlayout\assets\img\flags\sc.png
+wwwroot\assetadminlayout\assets\img\flags\scotland.png
+wwwroot\assetadminlayout\assets\img\flags\sd.png
+wwwroot\assetadminlayout\assets\img\flags\se.png
+wwwroot\assetadminlayout\assets\img\flags\sg.png
+wwwroot\assetadminlayout\assets\img\flags\sh.png
+wwwroot\assetadminlayout\assets\img\flags\si.png
+wwwroot\assetadminlayout\assets\img\flags\sj.png
+wwwroot\assetadminlayout\assets\img\flags\sk.png
+wwwroot\assetadminlayout\assets\img\flags\sl.png
+wwwroot\assetadminlayout\assets\img\flags\sm.png
+wwwroot\assetadminlayout\assets\img\flags\sn.png
+wwwroot\assetadminlayout\assets\img\flags\so.png
+wwwroot\assetadminlayout\assets\img\flags\sr.png
+wwwroot\assetadminlayout\assets\img\flags\st.png
+wwwroot\assetadminlayout\assets\img\flags\sv.png
+wwwroot\assetadminlayout\assets\img\flags\sy.png
+wwwroot\assetadminlayout\assets\img\flags\sz.png
+wwwroot\assetadminlayout\assets\img\flags\tc.png
+wwwroot\assetadminlayout\assets\img\flags\td.png
+wwwroot\assetadminlayout\assets\img\flags\tf.png
+wwwroot\assetadminlayout\assets\img\flags\tg.png
+wwwroot\assetadminlayout\assets\img\flags\th.png
+wwwroot\assetadminlayout\assets\img\flags\tj.png
+wwwroot\assetadminlayout\assets\img\flags\tk.png
+wwwroot\assetadminlayout\assets\img\flags\tl.png
+wwwroot\assetadminlayout\assets\img\flags\tm.png
+wwwroot\assetadminlayout\assets\img\flags\tn.png
+wwwroot\assetadminlayout\assets\img\flags\to.png
+wwwroot\assetadminlayout\assets\img\flags\tr.png
+wwwroot\assetadminlayout\assets\img\flags\tt.png
+wwwroot\assetadminlayout\assets\img\flags\tv.png
+wwwroot\assetadminlayout\assets\img\flags\tw.png
+wwwroot\assetadminlayout\assets\img\flags\tz.png
+wwwroot\assetadminlayout\assets\img\flags\ua.png
+wwwroot\assetadminlayout\assets\img\flags\ug.png
+wwwroot\assetadminlayout\assets\img\flags\um.png
+wwwroot\assetadminlayout\assets\img\flags\us.png
+wwwroot\assetadminlayout\assets\img\flags\uy.png
+wwwroot\assetadminlayout\assets\img\flags\uz.png
+wwwroot\assetadminlayout\assets\img\flags\va.png
+wwwroot\assetadminlayout\assets\img\flags\vc.png
+wwwroot\assetadminlayout\assets\img\flags\ve.png
+wwwroot\assetadminlayout\assets\img\flags\vg.png
+wwwroot\assetadminlayout\assets\img\flags\vi.png
+wwwroot\assetadminlayout\assets\img\flags\vn.png
+wwwroot\assetadminlayout\assets\img\flags\vu.png
+wwwroot\assetadminlayout\assets\img\flags\wales.png
+wwwroot\assetadminlayout\assets\img\flags\wf.png
+wwwroot\assetadminlayout\assets\img\flags\ws.png
+wwwroot\assetadminlayout\assets\img\flags\ye.png
+wwwroot\assetadminlayout\assets\img\flags\yt.png
+wwwroot\assetadminlayout\assets\img\flags\za.png
+wwwroot\assetadminlayout\assets\img\flags\zm.png
+wwwroot\assetadminlayout\assets\img\flags\zw.png
+wwwroot\assetadminlayout\assets\img\img-shadow.png
+wwwroot\assetadminlayout\assets\img\jm_denis.jpg
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo1.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo2.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo3.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo4.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo5.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo6.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo7.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo8.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\demo9.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\favicon.ico
+wwwroot\assetadminlayout\assets\img\kaiadmin\favicon.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\favicon.svg
+wwwroot\assetadminlayout\assets\img\kaiadmin\icon.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\icon.svg
+wwwroot\assetadminlayout\assets\img\kaiadmin\logo_dark.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\logo_dark.svg
+wwwroot\assetadminlayout\assets\img\kaiadmin\logo_documentation.png
+wwwroot\assetadminlayout\assets\img\kaiadmin\logo_light.svg
+wwwroot\assetadminlayout\assets\img\logo_light.png
+wwwroot\assetadminlayout\assets\img\logoproduct.svg
+wwwroot\assetadminlayout\assets\img\logoproduct2.svg
+wwwroot\assetadminlayout\assets\img\logoproduct3.svg
+wwwroot\assetadminlayout\assets\img\mlane.jpg
+wwwroot\assetadminlayout\assets\img\profile.jpg
+wwwroot\assetadminlayout\assets\img\profile2.jpg
+wwwroot\assetadminlayout\assets\img\sauro.jpg
+wwwroot\assetadminlayout\assets\img\talha.jpg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_blank_canvas_3rbb.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_creative_team_r90h.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_empty_xct9.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_Hello_qnas.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_no_data_qbuo.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_not_found_60pq.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_page_not_found_su7k.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_sign_in_e6hj.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_tabs_jf82.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_Taken_if77.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_update_uxn2.svg
+wwwroot\assetadminlayout\assets\img\undraw\undraw_upgrade_06a0.svg
+wwwroot\assetadminlayout\assets\img\visa.svg
+wwwroot\assetadminlayout\assets\js\core\bootstrap.min.js
+wwwroot\assetadminlayout\assets\js\core\jquery-3.7.1.min.js
+wwwroot\assetadminlayout\assets\js\core\popper.min.js
+wwwroot\assetadminlayout\assets\js\demo.js
+wwwroot\assetadminlayout\assets\js\kaiadmin.js
+wwwroot\assetadminlayout\assets\js\kaiadmin.min.js
+wwwroot\assetadminlayout\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js
+wwwroot\assetadminlayout\assets\js\plugin\bootstrap-tagsinput\bootstrap-tagsinput.min.js
+wwwroot\assetadminlayout\assets\js\plugin\bootstrap-toggle\bootstrap-toggle.min.js
+wwwroot\assetadminlayout\assets\js\plugin\chart.js\chart.min.js
+wwwroot\assetadminlayout\assets\js\plugin\chart-circle\circles.min.js
+wwwroot\assetadminlayout\assets\js\plugin\datatables\datatables.min.js
+wwwroot\assetadminlayout\assets\js\plugin\datepicker\bootstrap-datetimepicker.min.js
+wwwroot\assetadminlayout\assets\js\plugin\dropzone\dropzone.min.js
+wwwroot\assetadminlayout\assets\js\plugin\fullcalendar\fullcalendar.min.js
+wwwroot\assetadminlayout\assets\js\plugin\gmaps\gmaps.js
+wwwroot\assetadminlayout\assets\js\plugin\jquery.magnific-popup\jquery.magnific-popup.min.js
+wwwroot\assetadminlayout\assets\js\plugin\jquery.sparkline\jquery.sparkline.min.js
+wwwroot\assetadminlayout\assets\js\plugin\jquery.validate\jquery.validate.min.js
+wwwroot\assetadminlayout\assets\js\plugin\jquery-scrollbar\jquery.scrollbar.min.js
+wwwroot\assetadminlayout\assets\js\plugin\jsvectormap\jsvectormap.min.js
+wwwroot\assetadminlayout\assets\js\plugin\jsvectormap\world.js
+wwwroot\assetadminlayout\assets\js\plugin\list.js\list.min.js
+wwwroot\assetadminlayout\assets\js\plugin\moment\moment.min.js
+wwwroot\assetadminlayout\assets\js\plugin\owl-carousel\ajax-loader.gif
+wwwroot\assetadminlayout\assets\js\plugin\owl-carousel\owl.carousel.min.js
+wwwroot\assetadminlayout\assets\js\plugin\owl-carousel\owl.video.play.png
+wwwroot\assetadminlayout\assets\js\plugin\select2\select2.full.min.js
+wwwroot\assetadminlayout\assets\js\plugin\sortable\sortable.min.js
+wwwroot\assetadminlayout\assets\js\plugin\sticky-sidebar\sticky-sidebar.min.js
+wwwroot\assetadminlayout\assets\js\plugin\summernote\summernote-lite.min.js
+wwwroot\assetadminlayout\assets\js\plugin\sweetalert\sweetalert.min.js
+wwwroot\assetadminlayout\assets\js\plugin\webfont\webfont.min.js
+wwwroot\assetadminlayout\assets\js\setting-demo.js
+wwwroot\assetadminlayout\assets\js\setting-demo2.js
+wwwroot\css\main.css
+wwwroot\css\site.css
+wwwroot\favicon.ico
+wwwroot\js\main.js
+wwwroot\js\newFile.js
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\favicon.ico
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\img\hero-img.png
+wwwroot\lib\img\imgbook\book1.jpg
+wwwroot\lib\img\imgbook\book10.jpg
+wwwroot\lib\img\imgbook\book11.jpg
+wwwroot\lib\img\imgbook\book12.jpg
+wwwroot\lib\img\imgbook\book13.jpg
+wwwroot\lib\img\imgbook\book14.jpg
+wwwroot\lib\img\imgbook\book15.jpg
+wwwroot\lib\img\imgbook\book16.jpg
+wwwroot\lib\img\imgbook\book17.jpg
+wwwroot\lib\img\imgbook\book18.jpg
+wwwroot\lib\img\imgbook\book19.jpg
+wwwroot\lib\img\imgbook\book2.jpg
+wwwroot\lib\img\imgbook\book20.jpg
+wwwroot\lib\img\imgbook\book21.jpg
+wwwroot\lib\img\imgbook\book22.jpg
+wwwroot\lib\img\imgbook\book23.jpg
+wwwroot\lib\img\imgbook\book24.jpg
+wwwroot\lib\img\imgbook\book25.jpg
+wwwroot\lib\img\imgbook\book26.jpg
+wwwroot\lib\img\imgbook\book27.jpg
+wwwroot\lib\img\imgbook\book28.jpg
+wwwroot\lib\img\imgbook\book29.jpg
+wwwroot\lib\img\imgbook\book3.jpg
+wwwroot\lib\img\imgbook\book30.jpg
+wwwroot\lib\img\imgbook\book31.jpg
+wwwroot\lib\img\imgbook\book4.jpg
+wwwroot\lib\img\imgbook\book5.jpg
+wwwroot\lib\img\imgbook\book6.jpg
+wwwroot\lib\img\imgbook\book7.jpg
+wwwroot\lib\img\imgbook\book8.jpg
+wwwroot\lib\img\imgbook\book9.jpg
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt

@@ -1,0 +1,153 @@
+﻿@model WebQLTV.Models.Book
+
+@{
+    ViewData["Title"] = "Chi tiết về sách";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .custom-link {
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+    }
+
+        .custom-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+    .portfolio-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .portfolio-info li {
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- Thông báo mượn sách -->
+@if (TempData["BorrowSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["BorrowSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["BorrowError"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["BorrowError"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<!-- Nội dung chính -->
+<div class="container mt-5">
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="row gy-4 align-items-start">
+            <!-- Cột ảnh bìa sách -->
+            <div class="col-lg-4" style="margin-left:20px">
+                <div class="card shadow-sm">
+                    <img src="@Url.Content("~/" + Model.ImgPath)" alt="@Model.Title" class="img-fluid rounded" style="object-fit: cover;" onerror="this.src='/images/default-book.jpg'">
+                </div>
+            </div>
+            <!-- Cột thông tin sách và form mượn -->
+            <div class="col-lg-6" style="margin-left:60px">
+                <div class="row">
+                    <!-- Thông tin sách -->
+                    <div class="col-12">
+                        <div class="portfolio-info card shadow-sm p-4 mb-4">
+                            <h3 class="mb-3">Thông Tin Sách</h3>
+                            <ul>
+                                <li><strong>Tên Sách</strong>: @Model.Title</li>
+                                <li><strong>Thể Loại</strong>: @Model.Type?.TypeName</li>
+                                <li><strong>Tác Giả</strong>: @Model.Author?.AuthorName</li>
+                                <li><strong>Nhà Xuất Bản</strong>: @Model.Publisher?.PublisherName</li>
+                                <li><strong>Số Lượng Sách</strong>: @Model.Quantity</li>
+                                <li><strong>Tổng số lượng đã mượn</strong>: @Model.TotalBorrow</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Mô tả sách -->
+                    <div class="col-12">
+                        <div class="portfolio-description card shadow-sm p-4 mb-4">
+                            <h2 class="mb-3">Mô tả về sách</h2>
+                            <p>@Model.Description</p>
+                        </div>
+                    </div>
+
+                    <!-- Form mượn sách -->
+                    <div class="col-12">
+                        <div class="card shadow-sm p-4">
+                            <h5 class="card-title mb-3">Mượn sách</h5>
+                            <p class="mb-3 text-left">
+                                <span class="fw-bold">CHÚ Ý</span>: Các sách được mượn sẽ phải trả sau <span class="fw-bold">10 ngày</span> tính từ ngày mượn
+                            </p>
+                            <form id="borrowForm" asp-action="BookBorrow" method="post">
+                                <input type="hidden" name="UserID" value="@User.FindFirst("UserID")?.Value" />
+                                <input type="hidden" name="BookID" value="@Model.BookID" />
+
+                                <div class="mb-3">
+                                    <label for="BorrowDate" class="form-label fw-bold">Ngày mượn</label>
+                                    <input type="date" name="BorrowDate" id="BorrowDate" class="form-control" required
+                                           value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                                </div>
+                                <button type="button" class="btn btn-success custom-link" data-bs-toggle="modal" data-bs-target="#confirmBorrowModal">Đăng ký mượn sách</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal xác nhận mượn sách -->
+<div class="modal fade" id="confirmBorrowModal" tabindex="-1" aria-labelledby="confirmBorrowModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmBorrowModalLabel">Xác nhận mượn sách</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn mượn sách <strong>@Model.Title</strong> không? <br />
+                Ngày mượn: <span id="modalBorrowDate"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-success" id="confirmBorrowBtn">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hiển thị ngày mượn trong modal khi mở
+    document.querySelector('[data-bs-target="#confirmBorrowModal"]').addEventListener('click', function () {
+        const borrowDate = document.getElementById('BorrowDate').value; // Giá trị dạng yyyy-mm-dd
+        if (borrowDate) {
+            const dateParts = borrowDate.split('-'); // Tách thành mảng [yyyy, mm, dd]
+            const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`; // Định dạng thành dd/mm/yyyy
+            document.getElementById('modalBorrowDate').textContent = formattedDate;
+        } else {
+            document.getElementById('modalBorrowDate').textContent = 'Không xác định';
+        }
+    });
+
+    // Xử lý khi nhấn nút Xác nhận trong modal
+    document.getElementById('confirmBorrowBtn').addEventListener('click', function () {
+        document.getElementById('borrowForm').submit();
+    });
+</script>

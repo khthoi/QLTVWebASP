@@ -1,0 +1,193 @@
+﻿@model IEnumerable<WebQLTV.Models.Book>
+
+@{
+    ViewData["Title"] = "Danh sách sách theo thể loại";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="mb-4">Sách Theo Thể Loại: <strong>@ViewBag.TypeName</strong></h2>
+    </div>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var book in Model.Select((value, index) => new { value, index }))
+            {
+                if (book.index % 6 == 0)
+                {
+                    @if (book.index > 0)
+                    {
+                        @:</div>
+                    }
+                    @:<div class="row mb-4">
+                }
+
+                <div class="col-md-2 mb-4">
+                    <div class="book_avatar position-relative">
+                        <img src="@Url.Content("~/" + book.value.ImgPath)" 
+                             alt="@book.value.Title" 
+                             class="img-fluid rounded"
+                             style="height: 270px; width: 100%; object-fit: cover;"
+                             onerror="this.src='/images/default-book.jpg'">
+                        <div class="custom-tooltip">
+                            <div class="title">@book.value.Title</div>
+                            <div class="info">
+                                Loại sách: @book.value.Type?.TypeName<br>
+                                Tác giả: @book.value.Author?.AuthorName<br>
+                                Số lượng: @book.value.Quantity<br>
+                                Tổng lượng mượn: @book.value.TotalBorrow
+                            </div>
+                            <div class="tags">
+                                <span>@book.value.Type?.TypeName</span>
+                            </div>
+                            <div class="description">
+                                @book.value.Description
+                            </div>
+                            <div class="links">
+                                <a href="#">THƯ VIỆN ONLINE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book_info mt-2 text-center">
+                        <a href="@Url.Action("BookDetails", "Home", new { id = book.value.BookID })" 
+                           class="hover-link text-dark fw-bold d-block text-truncate"
+                           style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                            @book.value.Title
+                        </a>
+                    </div>
+                </div>
+
+                @if (book.index == Model.Count() - 1)
+                {
+                    @:</div>
+                }
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <p class="text-muted">Hiện tại không có sách nào thuộc thể loại này</p>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .book_avatar {
+        position: relative;
+        width: 100%;
+    }
+
+    .book_info {
+        width: 100%;
+    }
+
+    .custom-tooltip {
+        position: absolute;
+        background-color: #fff;
+        color: #000;
+        width: 300px;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        border: 1px solid #ddd;
+        pointer-events: none;
+        max-height: 400px; /* Giới hạn chiều cao tối đa */
+        overflow-y: auto; /* Thêm thanh cuộn nếu nội dung dài */
+    }
+
+    .custom-tooltip .title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .custom-tooltip .info {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .custom-tooltip .tags {
+        margin-bottom: 10px;
+    }
+
+    .custom-tooltip .tags span {
+        background-color: #e7f3ff;
+        color: #0056b3;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-right: 5px;
+    }
+
+    .custom-tooltip .description {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .custom-tooltip .links a {
+        color: #0056b3;
+        text-decoration: none;
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    .custom-tooltip .links a:hover {
+        text-decoration: underline;
+    }
+
+    .book_avatar:hover .custom-tooltip {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bookAvatars = document.querySelectorAll('.book_avatar');
+
+        bookAvatars.forEach(avatar => {
+            const tooltip = avatar.querySelector('.custom-tooltip');
+
+            avatar.addEventListener('mousemove', (e) => {
+                const rect = avatar.getBoundingClientRect();
+                let x = e.clientX - rect.left + 10;
+                let y = e.clientY - rect.top + 10;
+
+                // Đảm bảo tooltip không vượt ra ngoài màn hình
+                const tooltipWidth = tooltip.offsetWidth;
+                const tooltipHeight = tooltip.offsetHeight;
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                if (x + tooltipWidth > windowWidth) {
+                    x = windowWidth - tooltipWidth - 10;
+                }
+                if (y + tooltipHeight > windowHeight) {
+                    y = windowHeight - tooltipHeight - 10;
+                }
+                if (x < 0) x = 10;
+                if (y < 0) y = 10;
+
+                tooltip.style.left = `${x}px`;
+                tooltip.style.top = `${y}px`;
+            });
+
+            avatar.addEventListener('mouseenter', () => {
+                tooltip.style.opacity = '1';
+            });
+
+            avatar.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = '0';
+            });
+        });
+    });
+</script>

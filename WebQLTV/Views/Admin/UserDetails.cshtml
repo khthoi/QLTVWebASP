@@ -1,0 +1,193 @@
+﻿@model IEnumerable<WebQLTV.Models.Account>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2 class="mt-4" style="margin-left:20px">Danh Sách Người Dùng</h2>
+
+<div class="container mt-5">
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show mt-3" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">
+        Thêm Người Dùng
+    </button>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Mã Người Dùng</th>
+                <th>Tên Người Dùng</th>
+                <th>Họ Tên</th>
+                <th>Email</th>
+                <th>Vai Trò</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UserID</td>
+                    <td>@user.Username</td>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role.RoleName</td>
+                    <td class="text-center align-middle">
+                        <button class="btn btn-warning" onclick="openEditModal(@user.UserID, '@user.Username', '@user.FullName', '@user.Email', @user.RoleID)">
+                            Sửa
+                        </button>
+                        <button class="btn btn-danger" onclick="openDeleteModal(@user.UserID, '@user.Username')">
+                            Xóa
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal Thêm Người Dùng -->
+    <div class="modal fade" id="createModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="CreateUser" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thêm Người Dùng Mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>Tên Đăng Nhập</label>
+                            <input type="text" name="Username" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Mật Khẩu</label>
+                            <input type="password" name="PasswordHash" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Họ Tên</label>
+                            <input type="text" name="FullName" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="email" name="Email" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Vai Trò</label>
+                            <select name="RoleID" class="form-control" required>
+                                <option value="">-- Chọn vai trò --</option>
+                                @foreach (var role in (List<WebQLTV.Models.Role>)ViewData["Roles"])
+                                {
+                                    <option value="@role.RoleID">@role.RoleName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sửa Người Dùng -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="EditUser" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sửa Thông Tin Người Dùng</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>Tên Đăng Nhập</label>
+                            <input type="text" id="editUsername" name="Username" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Họ Tên</label>
+                            <input type="text" id="editFullName" name="FullName" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="email" id="editEmail" name="Email" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>Vai Trò</label>
+                            <select id="editRoleID" name="RoleID" class="form-control" required>
+                                @foreach (var role in (List<WebQLTV.Models.Role>)ViewData["Roles"])
+                                {
+                                    <option value="@role.RoleID">@role.RoleName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning">Lưu Thay Đổi</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Xóa Người Dùng -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="DeleteUser" method="post">
+                    <input type="hidden" id="deleteUserID" name="UserID" />
+                    <div class="modal-header">
+                        <h5 class="modal-title">Xóa Người Dùng</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bạn có chắc chắn muốn xóa người dùng <span id="deleteUsername" class="fw-bold"></span>?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">Xóa</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openEditModal(userID, username, fullName, email, roleID) {
+        // Gọi Ajax để lưu UserID và PasswordHash vào TempData
+        fetch(`/User/EditUser?id=${userID}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("editUsername").value = username;
+                    document.getElementById("editFullName").value = fullName;
+                    document.getElementById("editEmail").value = email;
+                    document.getElementById("editRoleID").value = roleID;
+
+                    var editModal = new bootstrap.Modal(document.getElementById("editModal"));
+                    editModal.show();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function openDeleteModal(userID, username) {
+        document.getElementById("deleteUserID").value = userID;
+        document.getElementById("deleteUsername").innerText = username;
+
+        var deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+        deleteModal.show();
+    }
+</script>

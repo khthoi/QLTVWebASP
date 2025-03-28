@@ -1,0 +1,249 @@
+﻿@model WebQLTV.Models.Account
+@{
+    ViewData["Title"] = "Thông tin người dùng";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="mb-4 text-center fw-bold" style="color: #2c3e50;">Thông tin người dùng</h1>
+        <hr class="mb-5" style="border-color: #3498db; border-width: 2px;">
+
+        @if (Model != null)
+        {
+            <div class="card shadow-lg border-0" style="border-radius: 15px;">
+                <div class="card-header bg-primary text-white py-3" style="border-radius: 15px 15px 0 0;">
+                    <h4 class="mb-0 fw-light text-white">
+                        <i class="bi bi-person-circle me-2"></i>Thông tin cá nhân
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+                    <dl class="row mb-4">
+                        <dt class="col-sm-4 fw-semibold text-muted">Tên tài khoản:</dt>
+                        <dd class="col-sm-8">@(Model.Username ?? "Không có thông tin")</dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Họ và Tên:</dt>
+                        <dd class="col-sm-8">@(Model.FullName ?? "Không có thông tin")</dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Email:</dt>
+                        <dd class="col-sm-8">@(Model.Email ?? "Không có thông tin")</dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Vai trò:</dt>
+                        <dd class="col-sm-8">
+                            @switch (Model.RoleID)
+                            {
+                                case 1:
+                                    <span class="badge bg-secondary py-2 px-3">Người dùng thông thường</span>
+                                    break;
+                                case 2:
+                                    <span class="badge bg-danger py-2 px-3">Quản trị viên</span>
+                                    break;
+                                default:
+                                    <span class="badge bg-info py-2 px-3">Vai trò không xác định</span>
+                                    break;
+                            }
+                        </dd>
+                    </dl>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <button data-bs-toggle="modal" data-bs-target="#notvailableModal" class="btn btn-outline-primary custom-btn px-4 py-2">
+                            <i class="bi bi-pencil-square me-2"></i>Chỉnh sửa
+                        </button>
+                        <button data-bs-toggle="modal" data-bs-target="#logoutModal" class="btn btn-danger custom-btn px-4 py-2">
+                            <i class="bi bi-box-arrow-right me-2"></i>Đăng xuất
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger mt-4 alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                Không tìm thấy thông tin người dùng.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Danh sách phiếu mượn sách -->
+<div class="container mt-5">
+    <h1 class="mb-1 text-center">Danh sách phiếu mượn của bạn</h1>
+    <h4 class="mb-4 text-center">Chú Ý: Các sách được mượn sẽ phải trả sau 10 ngày tính từ ngày mượn</h4>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <table class="table table-hover mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center">STT</th>
+                <th>Tên sách</th>
+                <th>Ngày mượn</th>
+                <th>Hạn trả</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.BorrowList != null && Model.BorrowList.Any())
+            {
+                int index = 1;
+                foreach (var borrow in Model.BorrowList)
+                {
+                    <tr>
+                        <td class="text-center">@index</td>
+                        <td>@borrow.Title</td>
+                        <td>@borrow.BorrowDate.ToString("dd/MM/yyyy")</td>
+                        <td>@borrow.ReturnDate.ToString("dd/MM/yyyy")</td>
+                        <td class="text-center align-middle">
+                            <span class="status-block @(borrow.Status == "Pending" ? "bg-warning text-dark" :
+                               borrow.Status == "Approved" ? "bg-info text-dark" :
+                               borrow.Status == "Returned" ? "bg-success text-dark" : "")">
+                                @(borrow.Status)
+                            </span>
+                        </td>
+                        <td class="text-center align-middle">
+                            @if (borrow.Status == "Approved")
+                            {
+                                <button type="button"
+                                        class="btn btn-success custom-btn return-book-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#returnBookModal"
+                                        data-borrow-id="@borrow.BorrowID"
+                                        data-book-title="@borrow.Title">
+                                    <i class="bi bi-book me-2"></i>Trả sách
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                    index++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center">Không có sách nào được mượn.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <!-- Thêm modal vào cuối file, trước thẻ </div> cuối cùng -->
+    <div class="modal fade" id="returnBookModal" tabindex="-1" aria-labelledby="returnBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title text-white" id="returnBookModalLabel">
+                        <i class="bi bi-check-circle me-2"></i>Xác nhận trả sách
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn trả cuốn sách <strong id="bookTitle">Tên sách</strong> không?</p>
+                    <input type="hidden" id="borrowIdToReturn" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Hủy
+                    </button>
+                    <button type="button" class="btn btn-success" id="confirmReturnBtn">
+                        <i class="bi bi-check-circle me-2"></i>Xác nhận
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        }
+
+    dt, dd {
+        padding-top: 0.5rem;
+    }
+    .custom-btn {
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .custom-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .status-block {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 500;
+        color: white;
+        background-color: rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+        .status-block:hover {
+            background-color: rgba(0,0,0,0.4);
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+</style>
+<!-- Thêm script để xử lý modal -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Xử lý khi nút "Trả sách" được click
+        const returnButtons = document.querySelectorAll('.return-book-btn');
+        returnButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const borrowId = this.getAttribute('data-borrow-id');
+                const bookTitle = this.getAttribute('data-book-title');
+
+                // Điền thông tin vào modal
+                document.getElementById('bookTitle').textContent = bookTitle;
+                document.getElementById('borrowIdToReturn').value = borrowId;
+            });
+        });
+
+        // Xử lý khi nút "Xác nhận" trong modal được click
+        document.getElementById('confirmReturnBtn').addEventListener('click', function () {
+            const borrowId = document.getElementById('borrowIdToReturn').value;
+
+            // Gửi form qua POST
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/Account/BookReturn';
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'BorrowID';
+            input.value = borrowId;
+
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+
+            // Đóng modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('returnBookModal'));
+            modal.hide();
+        });
+    });
+</script>

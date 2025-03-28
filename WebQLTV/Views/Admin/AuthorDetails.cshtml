@@ -1,0 +1,136 @@
+﻿@model IEnumerable<WebQLTV.Models.Author>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<h2 class="mt-4" style="margin-left:20px">Danh Sách Tác Giả</h2>
+<div class="container mt-5">
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show mt-3" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">
+        Thêm Tác Giả
+    </button>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th class="d-none">Mã Tác Giả</th>
+                <th>Tên Tác Giả</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model)
+            {
+                <tr>
+                    <td class="d-none">@author.AuthorID</td>
+                    <td>@author.AuthorName</td>
+                    <td class="text-center align-middle">
+                        <button class="btn btn-warning me-2" onclick="openEditModal(@author.AuthorID, '@author.AuthorName')">
+                            Sửa
+                        </button>
+
+                        <button class="btn btn-danger" onclick="openDeleteModal(@author.AuthorID, '@author.AuthorName')">
+                            Xóa
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal Thêm Tác Giả -->
+    <div class="modal fade" id="createModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="CreateAuthor" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thêm Tác Giả Mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="AuthorName">Tên Tác Giả</label>
+                            <input type="text" name="AuthorName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sửa Tác Giả -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="EditAuthor" method="post">
+                    <input type="hidden" id="editAuthorID" name="AuthorID" />
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sửa Tác Giả</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="editAuthorName">Tên Tác Giả</label>
+                            <input type="text" id="editAuthorName" name="AuthorName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning">Lưu Thay Đổi</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Xóa Tác Giả -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="DeleteAuthor" method="post">
+                    <input type="hidden" id="deleteAuthorID" name="AuthorID" />
+                    <div class="modal-header">
+                        <h5 class="modal-title">Xóa Tác Giả</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bạn có chắc chắn muốn xóa tác giả <span id="deleteAuthorName" class="fw-bold"></span>?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">Xóa</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+            function openEditModal(authorID, authorName) {
+            document.getElementById("editAuthorID").value = authorID;
+            document.getElementById("editAuthorName").value = authorName;
+
+            var editModal = new bootstrap.Modal(document.getElementById("editModal"));
+            editModal.show();
+        }
+
+        function openDeleteModal(authorID, authorName) {
+            document.getElementById("deleteAuthorID").value = authorID;
+            document.getElementById("deleteAuthorName").innerText = authorName;
+
+            var deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+            deleteModal.show();
+        }
+    </script>

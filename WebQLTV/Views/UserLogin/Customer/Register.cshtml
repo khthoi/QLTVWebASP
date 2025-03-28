@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <section class="bg-primary py-3 py-md-5 py-xl-8">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-12 col-md-6 col-xl-7">
+                    <div class="d-flex justify-content-center text-bg-primary">
+                        <div class="col-12 col-xl-9">
+                            <h1>THƯ VIỆN ONLINE</h1>
+                            <hr class="border-primary-subtle mb-4">
+                            <h5 class="h2 mb-4">Đăng ký mượn sách trực tuyến.</h5>
+                            <p class="lead mb-5">Đăng nhập hoặc đăng ký để mượn được tài liệu nội bộ giới hạn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-5">
+                    <div class="card border-0 rounded-4">
+                        <div class="card-body p-3 p-md-4 p-xl-5">
+                            <h3>Đăng ký</h3>
+                            <p>Đã có tài khoản? <a href="/Account/Login">Đăng nhập</a></p>
+
+                            <!-- Form đăng ký -->
+                            <form action="/Account/Register" method="post">
+                                <div class="form-floating mb-3">
+                                    <input name="Username" class="form-control" placeholder="Nhập tài khoản" required />
+                                    <label for="Username">Username</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input name="FullName" class="form-control" placeholder="Nhập họ và tên" required />
+                                    <label for="FullName">Họ và Tên</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input name="Email" class="form-control" placeholder="name@example.com" required />
+                                    <label for="Email">Email</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input name="PasswordHash" type="password" class="form-control" placeholder="Nhập mật khẩu" required />
+                                    <label for="PasswordHash">Password</label>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" type="submit">Đăng ký</button>
+                                </div>
+                            </form>
+                            <br>
+                            @if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Any())
+                            {
+                                <div class="alert alert-danger">
+                                    @ViewData.ModelState[""].Errors.FirstOrDefault()?.ErrorMessage
+                                </div>
+                            }
+
+                            <div class="mt-4">
+                                <p>Bạn là Quản trị viên? <a href="#">Tiến đến trang cho Quản trị viên</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

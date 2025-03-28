@@ -1,0 +1,145 @@
+﻿@model IEnumerable<WebQLTV.Models.BookBorrowViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2 class="mt-4" style="margin-left: 20px; font-weight: 600; color: #333;">Danh Sách Mượn Sách</h2>
+
+<div class="container mt-5">
+    @if (TempData["BookApproveMessage"] != null)
+    {
+        <div class="alert alert-@TempData["BookApproveAlertType"] alert-dismissible fade show mt-3" role="alert">
+            @TempData["BookApproveMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Mã Phiếu Mượn</th>
+                <th>Người Mượn</th>
+                <th>Tên Sách</th>
+                <th>Ngày Mượn</th>
+                <th>Hạn Trả</th>
+                <th>Trạng Thái</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var borrow in Model)
+            {
+                <tr>
+                    <td class="align-middle text-center">@borrow.BorrowID</td>
+                    <td class="align-middle">@borrow.Username</td>
+                    <td class="align-middle">@borrow.Title</td>
+                    <td class="align-middle">@borrow.BorrowDate.ToString("dd/MM/yyyy")</td>
+                    <td class="align-middle">@borrow.ReturnDate.ToString("dd/MM/yyyy")</td>
+                    <td class="text-center align-middle">
+                        <span class="status-block @(borrow.Status == "Pending" ? "bg-warning text-dark" :
+                               borrow.Status == "Approved" ? "bg-info text-dark" :
+                               borrow.Status == "Returned" ? "bg-success text-dark" : "")">
+                            @(borrow.Status)
+                        </span>
+                    </td>
+                    <td class="text-center align-middle">
+                        @if (borrow.Status == "Pending")
+                        {
+                            <form action="/BookBorrow/BookBorrowApprove" method="post" style="display: inline;" id="approveForm-@borrow.BorrowID">
+                                <input type="hidden" name="borrowId" value="@borrow.BorrowID" />
+                                <button type="button" class="btn btn-success custom-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#confirmApproveModal"
+                                        data-borrow-id="@borrow.BorrowID"
+                                        data-book-title="@borrow.Title"
+                                        data-username="@borrow.Username">
+                                    <i class="bi bi-check-circle me-2"></i>Accept
+                                </button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal xác nhận phê duyệt -->
+<div class="modal fade" id="confirmApproveModal" tabindex="-1" aria-labelledby="confirmApproveModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmApproveModalLabel">Xác nhận phê duyệt mượn sách</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn phê duyệt yêu cầu mượn sách <strong id="modalBookTitle"></strong>
+                cho người dùng <strong id="modalUsername"></strong> không?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-success" id="confirmApproveBtn">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .custom-btn {
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+        .custom-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+    .status-block {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 500;
+        color: white;
+        background-color: rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+        .status-block:hover {
+            background-color: rgba(0,0,0,0.4);
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<script>
+    // Xử lý khi mở modal
+    document.querySelectorAll('[data-bs-target="#confirmApproveModal"]').forEach(button => {
+        button.addEventListener('click', function () {
+            const borrowId = this.getAttribute('data-borrow-id');
+            const bookTitle = this.getAttribute('data-book-title');
+            const username = this.getAttribute('data-username');
+
+            // Gán thông tin vào modal
+            document.getElementById('modalBookTitle').textContent = bookTitle;
+            document.getElementById('modalUsername').textContent = username;
+
+            // Lưu borrowId để sử dụng khi xác nhận
+            document.getElementById('confirmApproveBtn').setAttribute('data-borrow-id', borrowId);
+        });
+    });
+
+    // Xử lý khi nhấn nút Xác nhận trong modal
+    document.getElementById('confirmApproveBtn').addEventListener('click', function () {
+        const borrowId = this.getAttribute('data-borrow-id');
+        const form = document.getElementById(`approveForm-${borrowId}`);
+        if (form) {
+            form.submit();
+        }
+    });
+</script>
