@@ -7,6 +7,22 @@
 <h2 class="mt-4" style="margin-left: 20px; font-weight: 600; color: #333;">Danh Sách Mượn Sách</h2>
 
 <div class="container mt-5">
+    <!-- Thêm form tìm kiếm -->
+    <div class="row mb-4">
+        <div class="col-md-6 col-lg-4">
+            <form method="get" action="BookBorrowDetails" class="input-group">
+                <input type="text" name="searchUsername" class="form-control"
+                       placeholder="Tìm kiếm theo tên người dùng..."
+                       value="@ViewBag.SearchUsername"
+                       style="border-radius: 20px 0 0 20px;">
+                <button type="submit" class="btn btn-primary"
+                        style="border-radius: 0 20px 20px 0;">
+                    <i class="bi bi-search me-2"></i>Tìm
+                </button>
+            </form>
+        </div>
+    </div>
+
     @if (TempData["BookApproveMessage"] != null)
     {
         <div class="alert alert-@TempData["BookApproveAlertType"] alert-dismissible fade show mt-3" role="alert">
@@ -14,6 +30,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
+
     <table class="table table-bordered table-hover shadow-sm">
         <thead class="table-dark">
             <tr>
@@ -57,6 +74,20 @@
                                 </button>
                             </form>
                         }
+                        @if (borrow.Status == "Returned")
+                        {
+                            <form action="/BookBorrow/BookBorrowDelete" method="post" style="display: inline;" id="deleteForm-@borrow.BorrowID">
+                                <input type="hidden" name="borrowId" value="@borrow.BorrowID" />
+                                <button type="button" class="btn btn-danger custom-btn ms-2"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#confirmDeleteModal"
+                                        data-borrow-id="@borrow.BorrowID"
+                                        data-book-title="@borrow.Title"
+                                        data-username="@borrow.Username">
+                                    <i class="bi bi-trash me-2"></i>Xóa
+                                </button>
+                            </form>
+                        }
                     </td>
                 </tr>
             }
@@ -79,6 +110,26 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 <button type="button" class="btn btn-success" id="confirmApproveBtn">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal xác nhận xóa -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Xác nhận xóa phiếu mượn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa phiếu mượn sách <strong id="modalDeleteBookTitle"></strong>
+                của người dùng <strong id="modalDeleteUsername"></strong> không?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xác nhận</button>
             </div>
         </div>
     </div>
@@ -115,6 +166,11 @@
     .table-hover tbody tr:hover {
         background-color: #f5f5f5;
     }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    }
 </style>
 
 <script>
@@ -125,11 +181,8 @@
             const bookTitle = this.getAttribute('data-book-title');
             const username = this.getAttribute('data-username');
 
-            // Gán thông tin vào modal
             document.getElementById('modalBookTitle').textContent = bookTitle;
             document.getElementById('modalUsername').textContent = username;
-
-            // Lưu borrowId để sử dụng khi xác nhận
             document.getElementById('confirmApproveBtn').setAttribute('data-borrow-id', borrowId);
         });
     });
@@ -138,6 +191,27 @@
     document.getElementById('confirmApproveBtn').addEventListener('click', function () {
         const borrowId = this.getAttribute('data-borrow-id');
         const form = document.getElementById(`approveForm-${borrowId}`);
+        if (form) {
+            form.submit();
+        }
+    });
+
+    // Xử lý modal Delete
+    document.querySelectorAll('[data-bs-target="#confirmDeleteModal"]').forEach(button => {
+        button.addEventListener('click', function () {
+            const borrowId = this.getAttribute('data-borrow-id');
+            const bookTitle = this.getAttribute('data-book-title');
+            const username = this.getAttribute('data-username');
+
+            document.getElementById('modalDeleteBookTitle').textContent = bookTitle;
+            document.getElementById('modalDeleteUsername').textContent = username;
+            document.getElementById('confirmDeleteBtn').setAttribute('data-borrow-id', borrowId);
+        });
+    });
+
+    document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
+        const borrowId = this.getAttribute('data-borrow-id');
+        const form = document.getElementById(`deleteForm-${borrowId}`);
         if (form) {
             form.submit();
         }

@@ -23,6 +23,11 @@ namespace WebQLTV.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            // Kiểm tra nếu người dùng đã đăng nhập
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("UserInfo", "Account");
+            }
             // Nếu đã đăng nhập, chuyển hướng đến trang chính
             if (HttpContext.Session.GetString("Username") != null)
             {
@@ -36,12 +41,6 @@ namespace WebQLTV.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(Login model)
         {
-            // Kiểm tra nếu người dùng đã đăng nhập
-            if (User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("UserInfo", "Account");
-            }
-
             if (ModelState.IsValid)
             {
                 var account = _context.User.FirstOrDefault(u =>
@@ -223,6 +222,24 @@ namespace WebQLTV.Controllers
             return View("/Views/UserLogin/Customer/UserInfo.cshtml", user);
         }
 
+        [HttpPost]
+        [Authorize(Roles = "User")]
+        public IActionResult Edituserinfo(int UserID, string FullName, string Email)
+        {
+            var user = _context.User.FirstOrDefault(u => u.UserID == UserID);
+            if (user == null)
+            {
+                TempData["Error"] = "Không tìm thấy thông tin người dùng.";
+                return RedirectToAction("Login");
+            }
+            
+            user.FullName = FullName;
+            user.Email = Email;
+            _context.SaveChanges();
+
+            TempData["Success"] = "Cập nhật thông tin thành công!";
+            return RedirectToAction("UserInfo");
+        }
 
         public async Task<IActionResult> Logout()
         {

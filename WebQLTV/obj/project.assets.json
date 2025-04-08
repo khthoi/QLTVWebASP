@@ -7010,11 +7010,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Project\\WebQLTV\\WebQLTV.csproj",
+      "projectUniqueName": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\WebQLTV.csproj",
       "projectName": "WebQLTV",
-      "projectPath": "D:\\Visual Studio Project\\WebQLTV\\WebQLTV.csproj",
+      "projectPath": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\WebQLTV.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio Project\\WebQLTV\\obj\\",
+      "outputPath": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

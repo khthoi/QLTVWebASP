@@ -19,7 +19,7 @@ namespace WebQLTV.Controllers
         }
 
         // Hiển thị danh sách sách (GET)
-        public async Task<IActionResult> BookDetails()
+        public async Task<IActionResult> BookDetails(string searchTitle)
         {
             try
             {
@@ -28,6 +28,15 @@ namespace WebQLTV.Controllers
                     .Include(b => b.Author)
                     .Include(b => b.Publisher)
                     .ToListAsync();
+
+                // Thêm logic tìm kiếm theo tên sách
+                if (!string.IsNullOrEmpty(searchTitle))
+                {
+                    books = books.Where(b => b.Title.Contains(searchTitle, StringComparison.OrdinalIgnoreCase)).ToList();
+                }
+
+                // Lưu giá trị tìm kiếm để hiển thị lại trong view
+                ViewBag.SearchTitle = searchTitle;
 
                 // Lấy danh sách file ảnh từ thư mục wwwroot/lib/img/imgbook/
                 var imgFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/lib/img/imgbook");

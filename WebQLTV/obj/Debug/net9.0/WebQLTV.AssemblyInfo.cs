@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebQLTV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aef1640bf49e1251a5b5423b2934420002a5e0fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebQLTV")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebQLTV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

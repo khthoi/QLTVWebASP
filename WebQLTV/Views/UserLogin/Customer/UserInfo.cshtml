@@ -45,7 +45,7 @@
                     </dl>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <button data-bs-toggle="modal" data-bs-target="#notvailableModal" class="btn btn-outline-primary custom-btn px-4 py-2">
+                        <button data-bs-toggle="modal" class="btn btn-outline-primary custom-btn px-4 py-2" onclick="openEdituserModal(@Model.UserID, '@Model.FullName', '@Model.Email')">
                             <i class="bi bi-pencil-square me-2"></i>Chỉnh sửa
                         </button>
                         <button data-bs-toggle="modal" data-bs-target="#logoutModal" class="btn btn-danger custom-btn px-4 py-2">
@@ -73,12 +73,12 @@
 
     @if (TempData["Success"] != null)
     {
-        <div class="alert alert-success">@TempData["Success"]</div>
+        <div id="success-alert" class="alert alert-success">@TempData["Success"]</div>
     }
 
     @if (TempData["Error"] != null)
     {
-        <div class="alert alert-danger">@TempData["Error"]</div>
+        <div id="error-alert" class="alert alert-danger">@TempData["Error"]</div>
     }
 
     <table class="table table-hover mt-4">
@@ -162,6 +162,68 @@
     </div>
 </div>
 
+<!-- Modal chỉnh sửa thông tin người dùng -->
+<div class="modal fade" id="edituserModal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 15px;">
+            <form asp-action="Edituserinfo" method="post">
+                <input type="hidden" id="editUserID" name="UserID">
+
+                <!-- Modal Header -->
+                <div class="modal-header py-3 bg-primary text-white" style="border-radius: 14px 14px 0 0;">
+                    <h5 class="modal-title fs-5 fw-bold text-white">
+                        <i class="bi bi-pencil-square me-2"></i>
+                        SỬA THÔNG TIN NGƯỜI DÙNG
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-4">
+                    <!-- Full Name Input -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-dark mb-2">Họ và tên</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="bi bi-card-heading text-muted"></i>
+                            </span>
+                            <input type="text" id="editFullName" name="FullName"
+                                   class="form-control border-start-0 ps-2"
+                                   placeholder="Nhập họ và tên" required
+                                   style="height: 45px; box-shadow: none !important;">
+                        </div>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="mb-0">
+                        <label class="form-label fw-bold text-dark mb-2">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="bi bi-envelope-fill text-muted"></i>
+                            </span>
+                            <input type="email" id="editEmail" name="Email"
+                                   class="form-control border-start-0 ps-2"
+                                   placeholder="Nhập địa chỉ email" required
+                                   style="height: 45px; box-shadow: none !important;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer py-3 bg-light" style="border-radius: 0 0 14px 14px;">
+                    <button type="submit" class="btn btn-primary px-4 fw-bold">
+                        <i class="bi bi-check2-circle me-2"></i>
+                        LƯU THAY ĐỔI
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary px-4 fw-bold" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>
+                        HỦY BỎ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <style>
     .card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -245,5 +307,20 @@
             const modal = bootstrap.Modal.getInstance(document.getElementById('returnBookModal'));
             modal.hide();
         });
+    });
+
+	function openEdituserModal(userID, fullName, email) {
+        document.getElementById("editUserID").value = userID;
+		document.getElementById("editFullName").value = fullName;
+		document.getElementById("editEmail").value = email;
+		var edituserModal = new bootstrap.Modal(document.getElementById("edituserModal"));
+		edituserModal.show();
+	}
+
+     // Tự động ẩn thông báo sau 10 giây (10000ms)
+    $(document).ready(function () {
+        setTimeout(function () {
+            $("#success-alert, #error-alert").fadeOut("slow");
+        }, 10000);
     });
 </script>

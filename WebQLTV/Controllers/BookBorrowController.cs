@@ -15,25 +15,32 @@ namespace WebQLTV.Controllers
         {
             _context = context;
         }
-
-        public IActionResult BookborrowDetails()
+        public IActionResult BookborrowDetails(string searchUsername)
         {
-            var borrowList = from borrow in _context.BookBorrow
-                             join user in _context.User on borrow.UserID equals user.UserID
-                             join book in _context.Books on borrow.BookID equals book.BookID
-                             select new BookBorrowViewModel
-                             {
-                                 BorrowID = borrow.BorrowID,
-                                 Username = user.FullName, // hoặc user.Username
-                                 Title = book.Title,
-                                 BorrowDate = borrow.BorrowDate,
-                                 ReturnDate = borrow.ReturnDate,
-                                 Status = borrow.Status
-                             };
+            var borrowList = (from borrow in _context.BookBorrow
+                              join user in _context.User on borrow.UserID equals user.UserID
+                              join book in _context.Books on borrow.BookID equals book.BookID
+                              select new BookBorrowViewModel
+                              {
+                                  BorrowID = borrow.BorrowID,
+                                  Username = user.FullName, // hoặc user.Username tùy theo yêu cầu
+                                  Title = book.Title,
+                                  BorrowDate = borrow.BorrowDate,
+                                  ReturnDate = borrow.ReturnDate,
+                                  Status = borrow.Status
+                              }).ToList(); // Chuyển sang client-side evaluation
 
-            return View("~/Views/Admin/BookborrowDetails.cshtml", borrowList.ToList());
+            // Thêm logic tìm kiếm theo tên người dùng
+            if (!string.IsNullOrEmpty(searchUsername))
+            {
+                borrowList = borrowList.Where(b => b.Username.Contains(searchUsername, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            // Lưu giá trị tìm kiếm để hiển thị lại trong view
+            ViewBag.SearchUsername = searchUsername;
+
+            return View("~/Views/Admin/BookborrowDetails.cshtml", borrowList);
         }
-
 
         [HttpPost]
         public IActionResult BookBorrowApprove(int borrowId)
@@ -69,6 +76,40 @@ namespace WebQLTV.Controllers
                 TempData["BookApproveAlertType"] = "danger";
             }
 
+            return RedirectToAction("BookborrowDetails");
+        }
+
+        [HttpPost]
+        public IActionResult BookBorrowDelete(int borrowId)
+        {
+            try
+            {
+                var borrow = _context.BookBorrow.FirstOrDefault(b => b.BorrowID == borrowId);
+                if (borrow == null)
+                {
+                    TempData["BookApproveMessage"] = "Không tìm thấy phiếu mượn.";
+                    TempData["BookApproveAlertType"] = "danger";
+                    return RedirectToAction("BookborrowDetails");
+                }
+
+                if (borrow.Status != "Returned")
+                {
+                    TempData["BookApproveMessage"] = "Chỉ có thể xóa phiếu mượn đang ở trạng thái Returned.";
+                    TempData["BookApproveAlertType"] = "warning";
+                    return RedirectToAction("BookborrowDetails");
+                }
+
+                _context.BookBorrow.Remove(borrow);
+                _context.SaveChanges();
+
+                TempData["BookApproveMessage"] = "Phiếu mượn đã được xóa thành công!";
+                TempData["BookApproveAlertType"] = "success";
+            }
+            catch (Exception ex)
+            {
+                TempData["BookApproveMessage"] = $"Lỗi khi xóa phiếu mượn: {ex.Message}";
+                TempData["BookApproveAlertType"] = "danger";
+            }
             return RedirectToAction("BookborrowDetails");
         }
     }
