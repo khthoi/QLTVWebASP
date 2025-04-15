@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebQLTV.Data;
+using PagedList;
+using PagedList.Mvc;
 using WebQLTV.Models;
 
 namespace WebQLTV.Controllers
@@ -19,21 +21,45 @@ namespace WebQLTV.Controllers
         }
 
         // Hiển thị danh sách sách (GET)
-        public async Task<IActionResult> BookDetails(string searchTitle)
+        public async Task<IActionResult> BookDetails(string searchTitle, int? page)
         {
             try
             {
-                var books = await _context.Books
+                // Khởi tạo số trang mặc định là 1
+                int pageNumber = page ?? 1;
+
+                // Số lượng items trên mỗi trang
+                int pageSize = 15;
+
+                // Lấy tất cả sách từ database
+                var booksQuery = _context.Books
                     .Include(b => b.Type)
                     .Include(b => b.Author)
                     .Include(b => b.Publisher)
-                    .ToListAsync();
+                    .AsQueryable();
 
                 // Thêm logic tìm kiếm theo tên sách
                 if (!string.IsNullOrEmpty(searchTitle))
                 {
-                    books = books.Where(b => b.Title.Contains(searchTitle, StringComparison.OrdinalIgnoreCase)).ToList();
+                    booksQuery = booksQuery.Where(b => b.Title.Contains(searchTitle));
                 }
+
+                // Đếm tổng số lượng bản ghi để tính số trang
+                int totalItems = await booksQuery.CountAsync();
+
+                // Lấy dữ liệu cho trang hiện tại
+                var books = await booksQuery
+                    .Skip((pageNumber - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+                // Tạo đối tượng PagedList thủ công
+                var pagedBooks = new StaticPagedList<Book>(
+                    books,
+                    pageNumber,
+                    pageSize,
+                    totalItems
+                );
 
                 // Lưu giá trị tìm kiếm để hiển thị lại trong view
                 ViewBag.SearchTitle = searchTitle;
@@ -41,15 +67,15 @@ namespace WebQLTV.Controllers
                 // Lấy danh sách file ảnh từ thư mục wwwroot/lib/img/imgbook/
                 var imgFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/lib/img/imgbook");
                 var imageFiles = Directory.GetFiles(imgFolderPath)
-                                          .Select(Path.GetFileName)
-                                          .ToList();
+                    .Select(Path.GetFileName)
+                    .ToList();
 
                 ViewData["Types"] = await _context.BookTypes.ToListAsync();
                 ViewData["Authors"] = await _context.Authors.ToListAsync();
                 ViewData["Publishers"] = await _context.Publishers.ToListAsync();
-                ViewData["ImageFiles"] = imageFiles;  // Truyền danh sách ảnh vào ViewData
+                ViewData["ImageFiles"] = imageFiles; // Truyền danh sách ảnh vào ViewData
 
-                return View("~/Views/Admin/BookDetails.cshtml", books);
+                return View("~/Views/Admin/BookDetails.cshtml", pagedBooks);
             }
             catch (Exception ex)
             {

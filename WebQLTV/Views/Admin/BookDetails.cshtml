@@ -1,7 +1,8 @@
-﻿@model IEnumerable<WebQLTV.Models.Book>
-
+﻿@model PagedList.IPagedList<WebQLTV.Models.Book>
+@using PagedList.Mvc;
+@using PagedList;
 @{
-	Layout = "~/Views/Shared/_Layout2.cshtml"; 
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 @if (TempData["Message"] != null)
 {
@@ -14,16 +15,11 @@
 <div class="mt-4" style="margin: 0px 8px 0px 8px;">
     <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addBookModal">Thêm Sách</a>
     <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#uploadImageModal" style="margin-left:8px">Thêm ảnh bìa sách</a>
-    <!-- Thêm form tìm kiếm -->
     <div class="row mb-4">
         <div class="col-md-6 col-lg-4">
-            <form method="get" action="BookDetails" class="input-group">
-                <input type="text" name="searchTitle" class="form-control"
-                       placeholder="Tìm kiếm theo tên sách..."
-                       value="@ViewBag.SearchTitle"
-                       style="border-radius: 20px 0 0 20px;">
-                <button type="submit" class="btn btn-primary"
-                        style="border-radius: 0 20px 20px 0;">
+            <form method="get" asp-action="BookDetails" class="input-group">
+                <input type="text" name="searchTitle" class="form-control" placeholder="Tìm kiếm theo tên sách..." value="@ViewBag.SearchTitle" style="border-radius: 20px 0 0 20px;">
+                <button type="submit" class="btn btn-primary" style="border-radius: 0 20px 20px 0;">
                     <i class="bi bi-search me-2"></i>Tìm
                 </button>
             </form>
@@ -32,14 +28,14 @@
     <table class="table table-bordered table-striped table-hover">
         <thead class="table-dark">
             <tr>
-                <th style="width: 7%;">BookID</th>
-                <th style="width: 26%;">Tiêu đề</th>
-                <th style="width: auto;">Loại sách</th>
-                <th style="width: auto;">Tác giả</th>
-                <th style="width: auto;">Nhà xuất bản</th>
-                <th style="width: 9%;">Số lượng</th>
-                <th style="width: 13%;">Tổng số lần mượn</th>
-                <th style="width: 13%;">Hành động</th>
+                <th>BookID</th>
+                <th>Tiêu đề</th>
+                <th>Loại sách</th>
+                <th>Tác giả</th>
+                <th>Nhà xuất bản</th>
+                <th>Số lượng</th>
+                <th>Tổng số lần mượn</th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
@@ -53,20 +49,120 @@
                     <td>@book.Publisher?.PublisherName</td>
                     <td>@book.Quantity</td>
                     <td>@book.TotalBorrow</td>
-                    <td class="text-center align-middle">
-                        <button onclick="openEditModal(@book.BookID, '@book.Title', @book.Quantity, @book.TypeID, @book.AuthorID, @book.PublisherID, '@book.Description', '@book.ImgPath')" class="btn btn-warning me-2">
-                            Sửa
-                        </button>
-                        <button class="btn btn-danger"
-                                onclick="openDeleteModal('@book.BookID', '@book.Title')">
-                            Xóa
-                        </button>
+                    <td>
+                        <button onclick="openEditModal(@book.BookID, '@book.Title', @book.Quantity, @book.TypeID, @book.AuthorID, @book.PublisherID, '@Html.Raw(book.Description?.Replace("\\", "\\\\").Replace("'", "\\'").Replace("\"", "\\\""))', '@book.ImgPath')" class="btn btn-warning me-2">Sửa</button>
+                        <button class="btn btn-danger" onclick="openDeleteModal('@book.BookID', '@book.Title')">Xóa</button>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+
+    <!-- Phân trang -->
+    <div class="pagination-container">
+        <div class="pagination-info">
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+        </div>
+        <ul class="pagination">
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("BookDetails", new { page = 1, searchTitle = ViewBag.SearchTitle })">Đầu</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("BookDetails", new { page = Model.PageNumber - 1, searchTitle = ViewBag.SearchTitle })">«</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Đầu</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">«</span>
+                </li>
+            }
+
+            @{
+                int startPage = Math.Max(1, Model.PageNumber - 2);
+                int endPage = Math.Min(Model.PageCount, Model.PageNumber + 2);
+            }
+
+            @for (int i = startPage; i <= endPage; i++)
+            {
+                <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("BookDetails", new { page = i, searchTitle = ViewBag.SearchTitle })">@i</a>
+                </li>
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("BookDetails", new { page = Model.PageNumber + 1, searchTitle = ViewBag.SearchTitle })">»</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("BookDetails", new { page = Model.PageCount, searchTitle = ViewBag.SearchTitle })">Cuối</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">»</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">Cuối</span>
+                </li>
+            }
+        </ul>
+    </div>
+        <br />
 </div>
+
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .pagination-info {
+        margin-bottom: 10px;
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-item {
+        margin: 0 2px;
+    }
+
+    .page-link {
+        padding: 6px 12px;
+        border: 1px solid #dee2e6;
+        color: #007bff;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: #fff;
+        border-color: #dee2e6;
+    }
+</style>
 <!-- Modal Thêm Sách -->
 <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -290,19 +386,22 @@
         var deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
         deleteModal.show();
     }
-    
-    
-    document.getElementById("imageSelect").addEventListener("change", function () {
-        var selectedFile = this.value;
-        var imgPath = "lib/img/imgbook/" + selectedFile;
-        document.getElementById("imgPath").value = imgPath;  // Gắn vào input hidden ImgPath
-    });
 
-    setTimeout(() => {
-        const alert = document.querySelector('.alert');
-        if (alert) {
-            alert.classList.add('fade');
-            setTimeout(() => alert.remove(), 500);  // Xóa hẳn khỏi DOM sau khi fade
+    document.addEventListener("DOMContentLoaded", function () {
+        const imageSelect = document.getElementById("imageSelect");
+        if (imageSelect) {
+            imageSelect.addEventListener("change", function () {
+                const selectedFile = this.value;
+                document.getElementById("imgPath").value = "lib/img/imgbook/" + selectedFile;
+            });
         }
-    }, 7000);  // Tự động ẩn sau 7 giây
+
+        setTimeout(() => {
+            const alert = document.querySelector('.alert');
+            if (alert) {
+                alert.classList.add('fade');
+                setTimeout(() => alert.remove(), 500);
+            }
+        }, 7000);
+    });
 </script>

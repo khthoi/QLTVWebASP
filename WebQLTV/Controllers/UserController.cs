@@ -2,6 +2,8 @@
 using WebQLTV.Models;
 using WebQLTV.Data;
 using System.Linq;
+using PagedList;
+using PagedList.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebQLTV.Controllers
@@ -16,11 +18,16 @@ namespace WebQLTV.Controllers
             _context = context;
         }
 
-        public IActionResult UserDetails()
+        public IActionResult UserDetails(int? page)
         {
-            var users = _context.User.ToList();
+            // Khởi tạo số trang mặc định là 1
+            int pageNumber = page ?? 1;
+
+            // Số lượng items trên mỗi trang
+            int pageSize = 15;
+            var users = _context.User.OrderBy(a => a.UserID).ToList();
             ViewData["Roles"] = _context.Roles.ToList();
-            return View("~/Views/Admin/UserDetails.cshtml", users);
+            return View("~/Views/Admin/UserDetails.cshtml", users.ToPagedList(pageNumber,pageSize));
         }
 
         [HttpPost]

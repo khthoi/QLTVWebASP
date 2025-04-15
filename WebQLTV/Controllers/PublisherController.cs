@@ -2,6 +2,8 @@
 using WebQLTV.Models;
 using WebQLTV.Data;  // Namespace cho DbContext
 using System.Linq;
+using PagedList;
+using PagedList.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebQLTV.Controllers
@@ -16,10 +18,16 @@ namespace WebQLTV.Controllers
             _context = context;
         }
 
-        public IActionResult PublisherDetails()
+        public IActionResult PublisherDetails(int? page)
         {
-            var publishers = _context.Publishers.ToList();
-            return View("~/Views/Admin/PublisherDetails.cshtml", publishers);
+            // Khởi tạo số trang mặc định là 1
+            int pageNumber = page ?? 1;
+
+            // Số lượng items trên mỗi trang
+            int pageSize = 10;
+
+            var publishers = _context.Publishers.OrderBy(a => a.PublisherID).ToList();
+            return View("~/Views/Admin/PublisherDetails.cshtml", publishers.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpPost]

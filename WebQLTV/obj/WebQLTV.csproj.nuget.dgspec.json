@@ -83,6 +83,10 @@
               "target": "Package",
               "version": "[4.2.2, )"
             },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "System.Web.Mvc.Extensions": {
               "target": "Package",
               "version": "[1.1.1.2, )"
@@ -90,6 +94,14 @@
             "Volo.Abp.VirtualFileSystem": {
               "target": "Package",
               "version": "[9.1.0, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.5.7, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[10.5.7, )"
             },
             "bootstrap": {
               "target": "Package",

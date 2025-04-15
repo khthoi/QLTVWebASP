@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WebQLTV.Models.BookType>
+﻿@model PagedList.IPagedList<WebQLTV.Models.BookType>
+@using PagedList.Mvc;
+@using PagedList;
 
 @{
     Layout = "~/Views/Shared/_Layout2.cshtml";
@@ -35,34 +37,124 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
-                        <th class="d-none">Mã Loại Sách</th>
-                        <th>Tên Loại Sách</th>
-                        <th>Hành động</th>
+                        <th style="width: 10%;">Mã</th>
+                        <th style="width: 70%;">Tên Loại Sách</th>
+                        <th style="width: 20%;">Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var bookType in Model)
                     {
                         <tr>
-                            <td class="d-none">@bookType.TypeID</td>
+                            <td>@bookType.TypeID</td>
                             <td>@bookType.TypeName</td>
                             <td class="text-center align-middle">
-                                <!-- Nút sửa -->
-                                <button class="btn btn-warning me-2" onclick="showEditModal('@bookType.TypeID', '@bookType.TypeName')">
-                                    Sửa
-                                </button>
-                                <!-- Nút xóa -->
-                                <button class="btn btn-danger" onclick="showDeleteModal('@bookType.TypeID', '@bookType.TypeName')">
-                                    Xóa
-                                </button>
+                                <button class="btn btn-warning me-2" onclick="showEditModal('@bookType.TypeID', '@bookType.TypeName')">Sửa</button>
+                                <button class="btn btn-danger" onclick="showDeleteModal('@bookType.TypeID', '@bookType.TypeName')">Xóa</button>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
+
+            <!-- Phân trang -->
+            <div class="pagination-container">
+                <div class="pagination-info">
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                </div>
+                <ul class="pagination">
+                    @if (Model.HasPreviousPage)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="@Url.Action("BookTypeDetails", new { page = 1 })">Đầu</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="@Url.Action("BookTypeDetails", new { page = Model.PageNumber - 1 })">«</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item disabled"><span class="page-link">Đầu</span></li>
+                        <li class="page-item disabled"><span class="page-link">«</span></li>
+                    }
+
+                    @{
+                        int startPage = Math.Max(1, Model.PageNumber - 2);
+                        int endPage = Math.Min(Model.PageCount, Model.PageNumber + 2);
+                    }
+
+                    @for (int i = startPage; i <= endPage; i++)
+                    {
+                        <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("BookTypeDetails", new { page = i })">@i</a>
+                        </li>
+                    }
+
+                    @if (Model.HasNextPage)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="@Url.Action("BookTypeDetails", new { page = Model.PageNumber + 1 })">»</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="@Url.Action("BookTypeDetails", new { page = Model.PageCount })">Cuối</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item disabled"><span class="page-link">»</span></li>
+                        <li class="page-item disabled"><span class="page-link">Cuối</span></li>
+                    }
+                </ul>
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .pagination-info {
+        margin-bottom: 10px;
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-item {
+        margin: 0 2px;
+    }
+
+    .page-link {
+        padding: 6px 12px;
+        border: 1px solid #dee2e6;
+        color: #007bff;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: #fff;
+        border-color: #dee2e6;
+    }
+</style>
 
 <!-- Modal chỉnh sửa loại sách -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">

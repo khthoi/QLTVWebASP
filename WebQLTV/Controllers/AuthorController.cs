@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using WebQLTV.Data;
 using WebQLTV.Models;
+using PagedList;
+using PagedList.Mvc;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
@@ -17,10 +19,19 @@ namespace WebQLTV.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> AuthorDetails()
+        public async Task<IActionResult> AuthorDetails(int? page)
         {
-            var authors = await _context.Authors.ToListAsync();
-            return View("~/Views/Admin/AuthorDetails.cshtml", authors);
+            // Khởi tạo số trang mặc định là 1
+            int pageNumber = page ?? 1;
+
+            // Số lượng items trên mỗi trang
+            int pageSize = 10;
+
+            // Lấy tất cả tác giả từ database
+            var authors = await _context.Authors.OrderBy(a => a.AuthorID).ToListAsync();
+
+            // Chuyển list thành PagedList và truyền vào view
+            return View("~/Views/Admin/AuthorDetails.cshtml", authors.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpPost]
@@ -31,6 +42,7 @@ namespace WebQLTV.Controllers
             {
                 _context.Authors.Add(author);
                 await _context.SaveChangesAsync();
+                TempData["AlertType"] = "success";
                 TempData["Message"] = "Tác giả đã được thêm thành công!";
             }
             return RedirectToAction("AuthorDetails");
@@ -44,6 +56,7 @@ namespace WebQLTV.Controllers
             {
                 _context.Authors.Update(author);
                 await _context.SaveChangesAsync();
+                TempData["AlertType"] = "success";
                 TempData["Message"] = "Tác giả đã được cập nhật thành công!";
             }
             return RedirectToAction("AuthorDetails");
@@ -58,6 +71,7 @@ namespace WebQLTV.Controllers
             {
                 _context.Authors.Remove(author);
                 await _context.SaveChangesAsync();
+                TempData["AlertType"] = "success";
                 TempData["Message"] = "Tác giả đã được xóa thành công!";
             }
             return RedirectToAction("AuthorDetails");

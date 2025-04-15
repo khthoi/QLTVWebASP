@@ -588,10 +588,15 @@ D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\staticwebassets\msb
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.WebQLTV.props
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.WebQLTV.props
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\staticwebassets.pack.json
-D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\WebQLTV.csproj.Up2Date
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\WebQLTV.dll
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\refint\WebQLTV.dll
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\WebQLTV.pdb
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\WebQLTV.genruntimeconfig.cache
 D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\ref\WebQLTV.dll
+D:\Visual Studio Project\QLTVWebASP\WebQLTV\bin\Debug\net9.0\PagedList.dll
+D:\Visual Studio Project\QLTVWebASP\WebQLTV\bin\Debug\net9.0\PagedList.Mvc.dll
+D:\Visual Studio Project\QLTVWebASP\WebQLTV\bin\Debug\net9.0\X.PagedList.dll
+D:\Visual Studio Project\QLTVWebASP\WebQLTV\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll
+D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\WebQLTV.MvcApplicationPartsAssemblyInfo.cs
+D:\Visual Studio Project\QLTVWebASP\WebQLTV\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

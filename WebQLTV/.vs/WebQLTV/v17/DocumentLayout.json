@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\views\\admin\\bookdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:views\\admin\\bookdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\controllers\\bookborrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\bookborrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\views\\admin\\bookborrowdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:views\\admin\\bookborrowdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\controllers\\booktypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\booktypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\views\\admin\\booktypedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:views\\admin\\booktypedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|d:\\visual studio project\\qltvwebasp\\webqltv\\views\\admin\\authordetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BB8FAEB-9C2E-43CB-B8B5-8F87E1FC958B}|WebQLTV.csproj|solutionrelative:views\\admin\\authordetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,51 +54,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BookborrowDetails.cshtml",
-              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\BookborrowDetails.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\BookborrowDetails.cshtml",
-              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\BookborrowDetails.cshtml",
-              "RelativeToolTip": "Views\\Admin\\BookborrowDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T01:30:16.042Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BookBorrowController.cs",
               "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\BookBorrowController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookBorrowController.cs",
               "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\BookBorrowController.cs",
               "RelativeToolTip": "Controllers\\BookBorrowController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCcAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T01:25:27.021Z"
+              "WhenOpened": "2025-04-15T14:15:34.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthorDetails.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\AuthorDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\AuthorDetails.cshtml",
+              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\AuthorDetails.cshtml",
+              "RelativeToolTip": "Views\\Admin\\AuthorDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T14:12:31.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookTypeDetails.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\BookTypeDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\BookTypeDetails.cshtml",
+              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\BookTypeDetails.cshtml",
+              "RelativeToolTip": "Views\\Admin\\BookTypeDetails.cshtml",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAAGIAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T14:08:23.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthorController.cs",
+              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\AuthorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthorController.cs",
+              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\AuthorController.cs",
+              "RelativeToolTip": "Controllers\\AuthorController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T14:08:34.964Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
-              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\BookController.cs",
-              "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwC0AAAAAAAAAAAAAAA==",
+              "Title": "BookTypeController.cs",
+              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\BookTypeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookTypeController.cs",
+              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Controllers\\BookTypeController.cs",
+              "RelativeToolTip": "Controllers\\BookTypeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T01:25:45.768Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookDetails.cshtml",
-              "DocumentMoniker": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\BookDetails.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\BookDetails.cshtml",
-              "ToolTip": "D:\\Visual Studio Project\\QLTVWebASP\\WebQLTV\\Views\\Admin\\BookDetails.cshtml",
-              "RelativeToolTip": "Views\\Admin\\BookDetails.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAABUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T01:22:17.905Z",
+              "WhenOpened": "2025-04-15T14:08:13.177Z",
               "EditorCaption": ""
             }
           ]

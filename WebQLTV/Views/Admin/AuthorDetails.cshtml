@@ -1,11 +1,12 @@
-﻿@model IEnumerable<WebQLTV.Models.Author>
+﻿@model PagedList.IPagedList<WebQLTV.Models.Author>
+@using PagedList.Mvc;
+@using PagedList;
 
 @{
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 <h2 class="mt-4" style="margin-left:20px">Danh Sách Tác Giả</h2>
 <div class="container mt-5">
-
     @if (TempData["Message"] != null)
     {
         <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show mt-3" role="alert">
@@ -13,11 +14,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
-
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">
         Thêm Tác Giả
     </button>
-
     <table class="table table-bordered table-striped table-hover">
         <thead class="table-dark">
             <tr>
@@ -36,7 +35,6 @@
                         <button class="btn btn-warning me-2" onclick="openEditModal(@author.AuthorID, '@author.AuthorName')">
                             Sửa
                         </button>
-
                         <button class="btn btn-danger" onclick="openDeleteModal(@author.AuthorID, '@author.AuthorName')">
                             Xóa
                         </button>
@@ -45,6 +43,112 @@
             }
         </tbody>
     </table>
+
+    <!-- Phân trang -->
+    <div class="pagination-container">
+        <div class="pagination-info">
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+        </div>
+        <ul class="pagination">
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("AuthorDetails", new { page = 1 })">Đầu</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("AuthorDetails", new { page = Model.PageNumber - 1 })">«</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Đầu</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">«</span>
+                </li>
+            }
+
+            @{
+                int startPage = Math.Max(1, Model.PageNumber - 2);
+                int endPage = Math.Min(Model.PageCount, Model.PageNumber + 2);
+            }
+
+            @for (int i = startPage; i <= endPage; i++)
+            {
+                <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("AuthorDetails", new { page = i })">@i</a>
+                </li>
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("AuthorDetails", new { page = Model.PageNumber + 1 })">»</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("AuthorDetails", new { page = Model.PageCount })">Cuối</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">»</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">Cuối</span>
+                </li>
+            }
+        </ul>
+    </div>
+    <br>
+</div>
+
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .pagination-info {
+        margin-bottom: 10px;
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-item {
+        margin: 0 2px;
+    }
+
+    .page-link {
+        padding: 6px 12px;
+        border: 1px solid #dee2e6;
+        color: #007bff;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: #fff;
+        border-color: #dee2e6;
+    }
+</style>
 
     <!-- Modal Thêm Tác Giả -->
     <div class="modal fade" id="createModal" tabindex="-1">

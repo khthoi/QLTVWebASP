@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebQLTV.Data;
+using PagedList;
+using PagedList.Mvc;
 using WebQLTV.Models;
 
 namespace WebQLTV.Controllers
@@ -19,12 +21,19 @@ namespace WebQLTV.Controllers
         }
 
         // Hiển thị danh sách loại sách (GET)
-        public async Task<IActionResult> BookTypeDetails()
+        public async Task<IActionResult> BookTypeDetails(int? page)
         {
             try
             {
-                var bookTypes = await _context.BookTypes.ToListAsync();
-                return View("~/Views/Admin/BookTypeDetails.cshtml", bookTypes);
+                // Khởi tạo số trang mặc định là 1
+                int pageNumber = page ?? 1;
+
+                // Số lượng items trên mỗi trang
+                int pageSize = 10;
+
+                // Lấy tất cả tác giả từ database
+                var bookTypes = await _context.BookTypes.OrderBy(b => b.TypeID).ToListAsync();
+                return View("~/Views/Admin/BookTypeDetails.cshtml", bookTypes.ToPagedList(pageNumber, pageSize));
             }
             catch (Exception ex)
             {

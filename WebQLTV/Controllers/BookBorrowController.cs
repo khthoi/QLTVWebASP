@@ -2,6 +2,8 @@
 using WebQLTV.Models;
 using WebQLTV.Data;
 using System.Linq;
+using PagedList;
+using PagedList.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebQLTV.Controllers
@@ -15,31 +17,43 @@ namespace WebQLTV.Controllers
         {
             _context = context;
         }
-        public IActionResult BookborrowDetails(string searchUsername)
+        public IActionResult BookborrowDetails(string searchUsername, int? page)
         {
-            var borrowList = (from borrow in _context.BookBorrow
-                              join user in _context.User on borrow.UserID equals user.UserID
-                              join book in _context.Books on borrow.BookID equals book.BookID
-                              select new BookBorrowViewModel
-                              {
-                                  BorrowID = borrow.BorrowID,
-                                  Username = user.FullName, // hoặc user.Username tùy theo yêu cầu
-                                  Title = book.Title,
-                                  BorrowDate = borrow.BorrowDate,
-                                  ReturnDate = borrow.ReturnDate,
-                                  Status = borrow.Status
-                              }).ToList(); // Chuyển sang client-side evaluation
+            // Khởi tạo số trang mặc định là 1
+            int pageNumber = page ?? 1;
+
+            // Số lượng items trên mỗi trang
+            int pageSize = 15;
+
+            var borrowQuery = (from borrow in _context.BookBorrow
+                               join user in _context.User on borrow.UserID equals user.UserID
+                               join book in _context.Books on borrow.BookID equals book.BookID
+                               select new BookBorrowViewModel
+                               {
+                                   BorrowID = borrow.BorrowID,
+                                   Username = user.FullName, // hoặc user.Username tùy theo yêu cầu
+                                   Title = book.Title,
+                                   BorrowDate = borrow.BorrowDate,
+                                   ReturnDate = borrow.ReturnDate,
+                                   Status = borrow.Status
+                               });
 
             // Thêm logic tìm kiếm theo tên người dùng
             if (!string.IsNullOrEmpty(searchUsername))
             {
-                borrowList = borrowList.Where(b => b.Username.Contains(searchUsername, StringComparison.OrdinalIgnoreCase)).ToList();
+                borrowQuery = borrowQuery.Where(b => b.Username.Contains(searchUsername));
             }
+
+            // Lấy danh sách dữ liệu
+            var borrowList = borrowQuery.ToList();
 
             // Lưu giá trị tìm kiếm để hiển thị lại trong view
             ViewBag.SearchUsername = searchUsername;
 
-            return View("~/Views/Admin/BookborrowDetails.cshtml", borrowList);
+            // Chuyển danh sách sang dạng phân trang
+            var pagedBorrowList = borrowList.ToPagedList(pageNumber, pageSize);
+
+            return View("~/Views/Admin/BookborrowDetails.cshtml", pagedBorrowList);
         }
 
         [HttpPost]
